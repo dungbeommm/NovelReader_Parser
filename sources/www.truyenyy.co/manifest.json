@@ -1,7 +1,7 @@
 {
   "id": "www.truyenyy.co",
   "name": "www.truyenyy.co",
-  "version": 2,
+  "version": 3,
   "domains": [
     "www.truyenyy.co",
     "truyenyy.co",
@@ -21,6 +21,10 @@
     "random_chapter",
     "cover",
     "navigation",
-    "search"
-  ]
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "rich_search"
+  ],
+  "engine": 3
 }

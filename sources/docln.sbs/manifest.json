@@ -1,7 +1,7 @@
 {
   "id": "docln.sbs",
   "name": "docln.sbs",
-  "version": 2,
+  "version": 3,
   "domains": [
     "docln.sbs",
     "www.docln.sbs",
@@ -19,6 +19,10 @@
     "random_chapter",
     "cover",
     "navigation",
-    "search"
-  ]
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "rich_search"
+  ],
+  "engine": 3
 }

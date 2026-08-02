@@ -1,9 +1,9 @@
-/* NovelReader source: ntruyen.lat | Engine v3 (vBook-style rich metadata). Auto-generated. */
+/* NovelReader source: __ID__ | Engine v3 (vBook-style rich metadata). Auto-generated. */
 (function (global) {
   "use strict";
 
-  const config = {"domain":"ntruyen.lat","keys":["ntruyen.xyz","ntruyen.lat"],"title":{"selector":"h1"},"chapter":{"selector":"h1"},"content":{"selector":".wrapper.prose"},"next_button":{"selector":"a[rel='nofollow']","element_indexed":1,"value":"href"},"pre_button":{"selector":"a[rel='nofollow']","element_indexed":0,"value":"href"},"use_webview":true,"use_html_parser":true,"chapter_ignore_domain":true,"data_loading_checker":["wrapper prose"],"data_ready_checker":[],"detail_first_chapter_js":"(function(){var a=document.querySelector('a[href*=\"/doc-truyen/\"]');return a?a.href:'';  })()"};
-  const VERSION = 3;
+  const config = __CONFIG__;
+  const VERSION = __VERSION__;
   const ENGINE = 3;
 
   /* ------------------------------------------------------------------ *

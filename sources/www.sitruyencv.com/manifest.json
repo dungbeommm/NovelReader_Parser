@@ -1,7 +1,7 @@
 {
   "id": "www.sitruyencv.com",
   "name": "www.sitruyencv.com",
-  "version": 2,
+  "version": 3,
   "domains": [
     "www.sitruyencv.com",
     "sitruyencv.com"
@@ -18,6 +18,10 @@
     "random_chapter",
     "cover",
     "navigation",
-    "search"
-  ]
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "rich_search"
+  ],
+  "engine": 3
 }
