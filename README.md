@@ -1,4 +1,4 @@
-# NovelReader Parser JS v2
+# NovelReader Parser JS
 
 Bộ **66 parser JavaScript độc lập** chuyển từ NovelReader V73 và nâng cấp để nhận một URL duy nhất.
 
