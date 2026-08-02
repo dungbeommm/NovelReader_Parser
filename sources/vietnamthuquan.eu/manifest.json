@@ -1,0 +1,23 @@
+{
+  "id": "vietnamthuquan.eu",
+  "name": "vietnamthuquan.eu",
+  "version": 2,
+  "domains": [
+    "vietnamthuquan.eu",
+    "vietnamthuquan"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/vietnamthuquan.eu/vietnamthuquan.eu.js",
+  "homepage_url": "https://vietnamthuquan.eu",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

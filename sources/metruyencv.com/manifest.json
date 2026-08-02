@@ -1,0 +1,31 @@
+{
+  "id": "metruyencv.com",
+  "name": "metruyencv.com",
+  "version": 2,
+  "domains": [
+    "metruyencv.com",
+    "www.metruyencv.com",
+    "metruyenchu.com",
+    "mtccv.com",
+    "metruyencv.biz",
+    "www.metruyencv.biz",
+    "truyencv.com",
+    "www.truyencv.com",
+    "mottruyen.com",
+    "api.mottruyen.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/metruyencv.com/metruyencv.com.js",
+  "homepage_url": "https://metruyencv.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

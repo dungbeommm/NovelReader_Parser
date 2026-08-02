@@ -1,0 +1,23 @@
+{
+  "id": "truyencn.com",
+  "name": "truyencn.com",
+  "version": 2,
+  "domains": [
+    "truyencn.com",
+    "www.truyencn.com"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyencn.com/truyencn.com.js",
+  "homepage_url": "https://truyencn.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

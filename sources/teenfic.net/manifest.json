@@ -1,0 +1,23 @@
+{
+  "id": "teenfic.net",
+  "name": "teenfic.net",
+  "version": 2,
+  "domains": [
+    "teenfic.net",
+    "www.teenfic.net"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/teenfic.net/teenfic.net.js",
+  "homepage_url": "https://teenfic.net",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

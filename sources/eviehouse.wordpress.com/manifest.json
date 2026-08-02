@@ -1,0 +1,22 @@
+{
+  "id": "eviehouse.wordpress.com",
+  "name": "eviehouse.wordpress.com",
+  "version": 2,
+  "domains": [
+    "eviehouse.wordpress.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/eviehouse.wordpress.com/eviehouse.wordpress.com.js",
+  "homepage_url": "https://eviehouse.wordpress.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

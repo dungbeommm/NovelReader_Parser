@@ -1,0 +1,23 @@
+{
+  "id": "dualeotruyenfull.net",
+  "name": "dualeotruyenfull.net",
+  "version": 2,
+  "domains": [
+    "dualeotruyenfull.net",
+    "www.dualeotruyenfull.net"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dualeotruyenfull.net/dualeotruyenfull.net.js",
+  "homepage_url": "https://dualeotruyenfull.net",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

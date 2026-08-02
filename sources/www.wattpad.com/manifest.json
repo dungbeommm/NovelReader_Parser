@@ -1,0 +1,23 @@
+{
+  "id": "www.wattpad.com",
+  "name": "www.wattpad.com",
+  "version": 2,
+  "domains": [
+    "www.wattpad.com",
+    "wattpad.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": true,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.wattpad.com/www.wattpad.com.js",
+  "homepage_url": "https://wattpad.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "phamvuc.com",
+  "name": "phamvuc.com",
+  "version": 2,
+  "domains": [
+    "phamvuc.com",
+    "www.phamvuc.com"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/phamvuc.com/phamvuc.com.js",
+  "homepage_url": "https://phamvuc.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

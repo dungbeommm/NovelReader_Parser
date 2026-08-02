@@ -1,0 +1,24 @@
+{
+  "id": "truyen.tangthuvien.vn",
+  "name": "truyen.tangthuvien.vn",
+  "version": 2,
+  "domains": [
+    "truyen.tangthuvien.vn",
+    "tangthuvien.vn",
+    "tangthuvien.net"
+  ],
+  "use_webview": true,
+  "may_need_vpn": true,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyen.tangthuvien.vn/truyen.tangthuvien.vn.js",
+  "homepage_url": "https://truyen.tangthuvien.vn",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

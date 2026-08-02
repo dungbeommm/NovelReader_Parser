@@ -1,0 +1,23 @@
+{
+  "id": "truyenhdc.com",
+  "name": "truyenhdc.com",
+  "version": 2,
+  "domains": [
+    "truyenhdc.com",
+    "truyenhdc"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenhdc.com/truyenhdc.com.js",
+  "homepage_url": "https://truyenhdc.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "tieuthuyetdammy.net",
+  "name": "tieuthuyetdammy.net",
+  "version": 2,
+  "domains": [
+    "tieuthuyetdammy.net",
+    "www.tieuthuyetdammy.net"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyetdammy.net/tieuthuyetdammy.net.js",
+  "homepage_url": "https://tieuthuyetdammy.net",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

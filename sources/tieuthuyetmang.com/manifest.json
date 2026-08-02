@@ -1,0 +1,23 @@
+{
+  "id": "tieuthuyetmang.com",
+  "name": "tieuthuyetmang.com",
+  "version": 2,
+  "domains": [
+    "tieuthuyetmang.com",
+    "tieuthuyetmang"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyetmang.com/tieuthuyetmang.com.js",
+  "homepage_url": "https://tieuthuyetmang.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "tieuthuyet.vn",
+  "name": "tieuthuyet.vn",
+  "version": 2,
+  "domains": [
+    "tieuthuyet.vn",
+    "www.tieuthuyet.vn"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyet.vn/tieuthuyet.vn.js",
+  "homepage_url": "https://tieuthuyet.vn",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

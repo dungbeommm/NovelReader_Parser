@@ -1,0 +1,24 @@
+{
+  "id": "docln.sbs",
+  "name": "docln.sbs",
+  "version": 2,
+  "domains": [
+    "docln.sbs",
+    "www.docln.sbs",
+    "docln.net"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/docln.sbs/docln.sbs.js",
+  "homepage_url": "https://docln.sbs",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

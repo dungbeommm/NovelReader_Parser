@@ -1,0 +1,25 @@
+{
+  "id": "truyenchu.net",
+  "name": "truyenchu.net",
+  "version": 2,
+  "domains": [
+    "truyenchu.net",
+    "truyenchu.com.vn",
+    "truyenchu.vn",
+    "www.truyenchu.net"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenchu.net/truyenchu.net.js",
+  "homepage_url": "https://truyenchu.net",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

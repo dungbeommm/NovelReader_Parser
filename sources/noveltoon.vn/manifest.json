@@ -1,0 +1,23 @@
+{
+  "id": "noveltoon.vn",
+  "name": "noveltoon.vn",
+  "version": 2,
+  "domains": [
+    "noveltoon.vn",
+    "noveltoon"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/noveltoon.vn/noveltoon.vn.js",
+  "homepage_url": "https://noveltoon.vn",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "webtruyendich.com",
+  "name": "webtruyendich.com",
+  "version": 2,
+  "domains": [
+    "webtruyendich.com",
+    "webtruyendich"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webtruyendich.com/webtruyendich.com.js",
+  "homepage_url": "https://webtruyendich.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

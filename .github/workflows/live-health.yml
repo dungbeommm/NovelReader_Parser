@@ -1,0 +1,31 @@
+name: Kiểm tra nguồn truyện thực tế
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+permissions:
+  contents: read
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - name: Cài Playwright
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+      - name: Kiểm tra cú pháp
+        run: npm run check:syntax
+      - name: Lấy truyện và chương ngẫu nhiên
+        continue-on-error: true
+        run: npm run check:live
+      - name: Tải báo cáo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-health-report
+          path: reports/live-health.json
+          if-no-files-found: warn

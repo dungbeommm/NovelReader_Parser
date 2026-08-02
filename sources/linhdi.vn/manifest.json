@@ -1,0 +1,23 @@
+{
+  "id": "linhdi.vn",
+  "name": "linhdi.vn",
+  "version": 2,
+  "domains": [
+    "linhdi.vn",
+    "linhdi"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/linhdi.vn/linhdi.vn.js",
+  "homepage_url": "https://linhdi.vn",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

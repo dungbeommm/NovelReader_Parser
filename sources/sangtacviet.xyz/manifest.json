@@ -1,0 +1,23 @@
+{
+  "id": "sangtacviet.xyz",
+  "name": "sangtacviet.xyz",
+  "version": 2,
+  "domains": [
+    "sangtacviet.xyz",
+    "sangtacviet"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/sangtacviet.xyz/sangtacviet.xyz.js",
+  "homepage_url": "https://sangtacviet.xyz",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "www.truyencom.com",
+  "name": "www.truyencom.com",
+  "version": 2,
+  "domains": [
+    "www.truyencom.com",
+    "truyencom.com",
+    "truyencom.blerino.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.truyencom.com/www.truyencom.com.js",
+  "homepage_url": "https://truyencom.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

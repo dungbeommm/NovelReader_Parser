@@ -1,0 +1,23 @@
+{
+  "id": "www.chivi.app",
+  "name": "www.chivi.app",
+  "version": 2,
+  "domains": [
+    "www.chivi.app",
+    "chivi"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.chivi.app/www.chivi.app.js",
+  "homepage_url": "https://chivi.app",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}

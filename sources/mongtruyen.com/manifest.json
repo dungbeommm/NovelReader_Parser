@@ -1,0 +1,23 @@
+{
+  "id": "mongtruyen.com",
+  "name": "mongtruyen.com",
+  "version": 2,
+  "domains": [
+    "mongtruyen.com",
+    "mongtruyen"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/mongtruyen.com/mongtruyen.com.js",
+  "homepage_url": "https://mongtruyen.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "navigation",
+    "search"
+  ]
+}
