@@ -49,3 +49,7 @@ node scripts/live_health_check.mjs
 ```
 
 Báo cáo được ghi vào `reports/live-health.json`. Website chặn bot, yêu cầu đăng nhập hoặc khóa chương có thể không vượt qua health check dù cú pháp parser vẫn hợp lệ.
+
+## Config dành cho ứng dụng Android
+
+File `parser.json` ở thư mục gốc là cấu hình Kotlin mà NovelReader tải tự động. Khi sửa nguồn, cần cập nhật cả `parser.json` và parser JS tương ứng. App giữ bản mặc định trong APK và chỉ kích hoạt file mới sau khi kiểm tra JSON hợp lệ.

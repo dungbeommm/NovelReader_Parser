@@ -1,0 +1,2331 @@
+[
+ {
+  "domain": "blhvip.vn",
+  "keys": [
+   "blhvip.vn",
+   "www.blhvip.vn"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1 a[href*=\"/truyen/\"], .breadcrumb a[href*=\"/truyen/\"], a[href*=\"/truyen/\"]"
+  },
+  "chapter": {
+   "selector": "h1, h2, .chapter-title, .entry-title, .title"
+  },
+  "content": {
+   "selector": "#chapter-content, .chapter-content, .reading-content, .entry-content, article, .content, #content"
+  },
+  "next_button": {
+   "selector": "a[rel=next], a.next, .next a, a[href*=\"/chuong-\"]:contains(Sau), a:contains(Chương sau)",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[rel=prev], a.prev, .prev a, a[href*=\"/chuong-\"]:contains(Trước), a:contains(Chương trước)",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*=\"/chuong-1\"], a[href*=\"/chuong-01\"], a[href*=\"/chuong-\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "html_removes": [
+   "script",
+   "style",
+   "ins",
+   ".ads",
+   ".advertisement",
+   ".banner",
+   ".comment",
+   ".comments",
+   "iframe",
+   "button",
+   ".nav-chapter",
+   ".chapter-nav"
+  ],
+  "content_removes": [
+   {
+    "start": "Từ khóa:",
+    "end": "\n"
+   },
+   {
+    "start": "Bạn đang đọc",
+    "end": "\n"
+   }
+  ],
+  "search": {
+   "url": "https://blhvip.vn/tim-kiem?keyword=%s",
+   "urls": [
+    "https://blhvip.vn/tim-kiem?keyword=%s",
+    "https://blhvip.vn/search?keyword=%s",
+    "https://blhvip.vn/?s=%s"
+   ],
+   "item": {
+    "selector": ".list-truyen .row, .story-item, .book-item, article, .item, li"
+   },
+   "title": {
+    "selector": "h3 a, h2 a, .title a, a[href*=\"/truyen/\"]"
+   },
+   "link": {
+    "selector": "h3 a, h2 a, .title a, a[href*=\"/truyen/\"]",
+    "value": "href"
+   },
+   "cover": {
+    "selector": "img",
+    "value": "src"
+   },
+   "story_url_regex": "^https?://[^/]+/truyen/[a-z0-9][a-z0-9-]{2,}/?$",
+   "exclude_url_regex": "(chuong|/the-loai|/tag/|/page/|/tim-kiem|/search|\\?s=|/login|/user)",
+   "story_url_templates": [
+    "https://blhvip.vn/truyen/%d/"
+   ],
+   "generated": false
+  }
+ },
+ {
+  "domain": "wikicv.org",
+  "keys": [
+   "wikicv.org",
+   "wikicv.net",
+   "wikicv",
+   "truyenwikidich.net",
+   "truyenwikidich",
+   "wikidich.com",
+   "wikidich.info"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".book-title"
+  },
+  "chapter": {
+   "selector": ".book-title",
+   "element_indexed": 1
+  },
+  "content": {
+   "selector": "#bookContentBody"
+  },
+  "next_button": {
+   "selector": "#btnNextChapter",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#btnPreChapter",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".control-btns a.orange-btn",
+   "value": "href"
+  },
+  "content_removes": [
+   {
+    "start": "║༺☆༻",
+    "end": "༺☆༻║"
+   },
+   {
+    "start": "║༺★༻",
+    "end": "༺★༻║"
+   },
+   {
+    "start": "close Advertisements",
+    "end": "Powered by GliaStudios"
+   }
+  ],
+  "content_replaces": [
+   "·"
+  ],
+  "use_webview": false
+ },
+ {
+  "domain": "www.metruyenchuvn.com",
+  "keys": [
+   "metruyenchu.com.vn",
+   "metruyenchuvn.com",
+   "www.metruyenchuvn.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".current-book"
+  },
+  "chapter": {
+   "selector": ".current-chapter"
+  },
+  "content": {
+   "selector": ".truyen"
+  },
+  "next_button": {
+   "selector": "#gotochap a.next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#gotochap a.back",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "#chapter-list li:first-child a",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "metruyencv.com",
+  "keys": [
+   "metruyencv.com",
+   "www.metruyencv.com",
+   "metruyenchu.com",
+   "mtccv.com",
+   "metruyencv.biz",
+   "www.metruyencv.biz",
+   "truyencv.com",
+   "www.truyencv.com",
+   "mottruyen.com",
+   "api.mottruyen.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1, .book-title, .story-title"
+  },
+  "chapter": {
+   "selector": "h1.chapter-title, .chapter-title, h2"
+  },
+  "content": {
+   "selector": "#chapter-content, .chapter-content, .content, article"
+  },
+  "next_button": {
+   "selector": "a[rel=next], .next-chapter a, #next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[rel=prev], .prev-chapter a, #prev_chap",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*='/chuong-'], a[href*='/chapter-']",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "truyendich.store",
+  "keys": [
+   "truyendich.ai",
+   "truyendich.vip",
+   "truyendich.live",
+   "truyendich.store"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".tdai-book-title"
+  },
+  "chapter": {
+   "selector": ".tdai-chapter-title"
+  },
+  "content": {
+   "selector": ".tdai-content"
+  },
+  "next_button": {
+   "selector": "a.tdai-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.tdai-prev",
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){try{var current=(location.pathname.match(/^\\/doc-truyen\\/(?:ai\\/|cv\\/)?([^\\/]+)/)||[])[1];var best=null;[].slice.call(document.querySelectorAll('a[href*=\"/doc-truyen/\"][href*=\"/chuong-\"]')).forEach(function(a){var u=new URL(a.getAttribute('href')||a.href,location.origin);var m=u.pathname.match(/^\\/doc-truyen(?:\\/(?:ai|cv))?\\/([^\\/]+)\\/chuong-(\\d+)\\/?$/);if(!m||m[1]!==current)return;var n=parseInt(m[2],10);if(!best||n<best.n)best={n:n,href:u.origin+'/doc-truyen/'+m[1]+'/chuong-'+n};});if(best)return best.href;var fm=document.documentElement.innerHTML.match(/firstChapterSlug\\\\?\":\\\\?\"(\\d+)/);return current&&fm?location.origin+'/doc-truyen/'+current+'/chuong-'+fm[1]:'';}catch(e){return'';}})()",
+  "content_load_js": "(function(){try{if(document.getElementById('tdai-ready'))return;function ready(){if(!document.getElementById('tdai-ready')){var r=document.createElement('div');r.id='tdai-ready';r.style.display='none';document.body.appendChild(r);}}function putText(cls,txt){if(!txt||document.querySelector('.'+cls))return;var e=document.createElement('span');e.className=cls;e.style.display='none';e.textContent=txt.trim();document.body.appendChild(e);}function putLink(cls,href){if(!href||document.querySelector('a.'+cls))return;var a=document.createElement('a');a.className=cls;a.href=href;a.style.display='none';document.body.appendChild(a);}function canonical(href){try{var u=new URL(href,location.origin);var m=u.pathname.match(/^\\/doc-truyen(?:\\/(?:ai|cv))?\\/([^\\/]+)\\/chuong-(\\d+)\\/?$/);return m?u.origin+'/doc-truyen/'+m[1]+'/chuong-'+m[2]:u.href;}catch(e){return href;}}var chapterHeading=(document.querySelector('h1[itemprop=\"name\"], h1')||{}).textContent||'';var bookTitle=((document.querySelector('a[href^=\"/doc-truyen/\"]:not([href*=\"/chuong-\"]) span[itemprop=\"name\"]')||{}).textContent||'').trim();if(!bookTitle){var dt=document.title||'';var mTitle=dt.match(/^(?:Chương\\s*\\d+\\s*-\\s*)?(.+?)\\s*\\|\\s*TruyenDich\\.AI\\s*$/i);bookTitle=mTitle?mTitle[1].trim():dt.trim();}putText('tdai-book-title',bookTitle);var cur=(location.pathname.match(/^\\/doc-truyen(?:\\/(?:ai|cv))?\\/([^\\/]+)\\/chuong-(\\d+)\\/?$/)||[]);var chapterNum=cur[2]||((document.body.textContent||'').match(/Chương\\s*(\\d+)/i)||[])[1]||'';var fullChapterTitle=((chapterNum?('Chương '+chapterNum):'')+(chapterHeading?(' - '+chapterHeading):'')).replace(/^\\s+-\\s+/,'').trim();putText('tdai-chapter-title',fullChapterTitle||chapterHeading);var content=document.querySelector('section[itemprop=\"text\"], .prose-novel');if(content&&!document.querySelector('.tdai-content')){var c=content.cloneNode(true);c.querySelectorAll('script,style,button,a,svg').forEach(function(e){e.remove();});var d=document.createElement('div');d.className='tdai-content';d.style.display='none';d.innerHTML=c.innerHTML;document.body.appendChild(d);}var prev=document.querySelector('a[aria-label=\"Chương trước\"][href*=\"/chuong-\"]');var next=document.querySelector('a[aria-label=\"Chương sau\"][href*=\"/chuong-\"]');if(prev)putLink('tdai-prev',canonical(prev.getAttribute('href')||prev.href));if(next)putLink('tdai-next',canonical(next.getAttribute('href')||next.href));if(cur.length){var base=location.origin+'/doc-truyen/'+cur[1];var html=document.documentElement.innerHTML;function num(re){var m=html.match(re);return m&&m[1]!=='null'?parseInt(m[1],10):null;}var pn=num(/\\\\?\"prev_chapter_number\\\\?\":(null|\\d+)/);var nn=num(/\\\\?\"next_chapter_number\\\\?\":(null|\\d+)/);if(pn!==null)putLink('tdai-prev',base+'/chuong-'+pn);if(nn!==null)putLink('tdai-next',base+'/chuong-'+nn);}ready();}catch(e){try{var r=document.createElement('div');r.id='tdai-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+  "data_loading_checker": [
+   "tdai-ready"
+  ]
+ },
+ {
+  "domain": "www.truyenmoikk.com",
+  "keys": [
+   "truyenmoikk",
+   "truyenmoiqq",
+   "truyenmoiss"
+  ],
+  "title": {
+   "selector": ".truyen-title"
+  },
+  "chapter": {
+   "selector": ".chapter-title"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "#next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev_chap",
+   "value": "href"
+  },
+  "use_html_parser": true,
+  "chapter_ignore_domain": true,
+  "detail_first_chapter": {
+   "selector": "#firstChapter",
+   "value": "href"
+  },
+  "search": {
+   "url": "https://www.truyenmoikk.com/tim-kiem/?tukhoa=%s",
+   "urls": [
+    "https://www.truyenmoikk.com/tim-kiem/?tukhoa=%s",
+    "https://www.truyenmoikk.com/?s=%s"
+   ],
+   "item": {
+    "selector": ".list-truyen .row, .row, .book-item, .story-item, .truyen-item, article, li"
+   },
+   "title": {
+    "selector": "h3 a, h2 a, .truyen-title a, .book-title a, .title a, a[title]"
+   },
+   "link": {
+    "selector": "h3 a, h2 a, .truyen-title a, .book-title a, .title a, a[title]",
+    "value": "href"
+   },
+   "cover": {
+    "selector": "img",
+    "value": "src"
+   },
+   "story_url_regex": "^https?://[^/]+/[a-z0-9][a-z0-9-]{2,}/?$",
+   "exclude_url_regex": "(chuong|chapter|/tim-kiem|/tim-truyen|/the-loai|/danh-sach|/tac-gia|/tag/|/category/|/page/|\\?s=|/dang-nhap|/dang-ky|/lien-he|/user)",
+   "story_url_templates": [
+    "https://www.truyenmoikk.com/%d/",
+    "https://www.truyenmoikk.com/truyen/%d/"
+   ],
+   "generated": true
+  }
+ },
+ {
+  "domain": "truyenfull.live",
+  "keys": [
+   "truyenfull.io",
+   "truyenfull.live",
+   "truyenfull.today",
+   "truyenfull.tv",
+   "truyenfull.vision",
+   "truyenfull.vn"
+  ],
+  "title": {
+   "selector": ".truyen-title"
+  },
+  "chapter": {
+   "selector": ".chapter-title"
+  },
+  "content": {
+   "selector": "#chapter-c"
+  },
+  "next_button": {
+   "selector": "#next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev_chap",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".list-chapter li a",
+   "value": "href"
+  },
+  "use_html_parser": true,
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "sangtacviet.xyz",
+  "keys": [
+   "sangtacviet"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "#booknameholder"
+  },
+  "chapter": {
+   "selector": "#bookchapnameholder"
+  },
+  "content": {
+   "selector": ".contentbox[cid]"
+  },
+  "content_replaces": [
+   "Đọc trên web để có chất lượng dịch cao"
+  ],
+  "next_button": {
+   "selector": "#navnexttop",
+   "value": "href",
+   "action": 1
+  },
+  "pre_button": {
+   "selector": "#navprevtop",
+   "value": "href",
+   "action": 1
+  },
+  "data_loading_checker": [],
+  "data_ready_checker": [
+   "Nhấp vào để tải chương",
+   "Đang tải nội dung chương"
+  ],
+  "content_load_js": "var f=document.createElement('iframe');document.body.appendChild(f);XMLHttpRequest.prototype.send=f.contentWindow.XMLHttpRequest.prototype.send;document.body.removeChild(f);if(typeof chapterfetcher!=='undefined'){try{chapterfetcher.send('')}catch(e){console.log('STV send error:',e)}}",
+  "chapter_ignore_domain": false,
+  "detail_first_chapter_js": "click:#readnowbtn",
+  "apply_word_segmentation": true
+ },
+ {
+  "domain": "www.wattpad.com",
+  "may_need_vpn": true,
+  "keys": [
+   "wattpad.com"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "h2"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "use_proxy": "https://novel-reader-1063262486780.asia-southeast1.run.app/redirect?origin=",
+   "selector": "p",
+   "interceptor": "wattpad"
+  },
+  "next_button": {
+   "selector": "#story-part-navigation a",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#story-part-navigation a",
+   "value": "href"
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "www.truyenyy.co",
+  "keys": [
+   "truyenyy.co",
+   "truyenyy.com",
+   "truyenyy.vip",
+   "truyenyy.xyz",
+   "www.truyenyy.co"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "a.left-4",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": "article"
+  },
+  "next_button": {
+   "selector": "a.yy-btn.btn-active",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.yy-btn.btn-normal",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.bg-primarySecond",
+   "value": "href"
+  },
+  "chapter_ignore_domain": false
+ },
+ {
+  "domain": "noveltoon.vn",
+  "keys": [
+   "noveltoon"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".watch-main-title"
+  },
+  "chapter": {
+   "selector": ".watch-chapter-title"
+  },
+  "content": {
+   "selector": ".watch-chapter-detail"
+  },
+  "next_button": {
+   "selector": ".bottom-bar a",
+   "value": "href",
+   "element_indexed": 1
+  },
+  "pre_button": {
+   "selector": ".bottom-bar a",
+   "value": "href"
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyen.tangthuvien.vn",
+  "may_need_vpn": true,
+  "key": "tangthuvien",
+  "chapter": {
+   "selector": ".page-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".chap-c",
+   "value": "text"
+  },
+  "next_button": {
+   "selector": ".pull-right",
+   "action": 1
+  },
+  "pre_button": {
+   "selector": ".control-chap a",
+   "action": 1
+  },
+  "use_webview": true,
+  "use_html_parser": true,
+  "data_loading_checker": [
+   "id=\"control-chap\""
+  ],
+  "detail_first_chapter": {
+   "selector": "#btnReadBook",
+   "value": "href"
+  },
+  "keys": [
+   "truyen.tangthuvien.vn",
+   "tangthuvien.vn",
+   "tangthuvien.net"
+  ]
+ },
+ {
+  "domain": "ntruyen.lat",
+  "keys": [
+   "ntruyen.xyz",
+   "ntruyen.lat"
+  ],
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": ".wrapper.prose"
+  },
+  "next_button": {
+   "selector": "a[rel='nofollow']",
+   "element_indexed": 1,
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[rel='nofollow']",
+   "element_indexed": 0,
+   "value": "href"
+  },
+  "use_webview": true,
+  "use_html_parser": true,
+  "chapter_ignore_domain": true,
+  "data_loading_checker": [
+   "wrapper prose"
+  ],
+  "data_ready_checker": [],
+  "detail_first_chapter_js": "(function(){var a=document.querySelector('a[href*=\"/doc-truyen/\"]');return a?a.href:'';  })()"
+ },
+ {
+  "domain": "www.sstruyen.net",
+  "key": "sstruyen",
+  "use_html_parser": true,
+  "title": {
+   "selector": ".truyen-title"
+  },
+  "chapter": {
+   "selector": ".chapter-title"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "#next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev_chap",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".clearfix.lstbtn a",
+   "value": "href"
+  },
+  "keys": [
+   "sstruyen.com",
+   "sstruyen.vn",
+   "www.sstruyen.net"
+  ]
+ },
+ {
+  "domain": "lovetruyen.pro",
+  "use_html_parser": true,
+  "may_need_vpn": true,
+  "key": "lovetruyen",
+  "title": {
+   "selector": ".story-title"
+  },
+  "chapter": {
+   "selector": ".chapter-title"
+  },
+  "content": {
+   "selector": "#chapter-content"
+  },
+  "next_button": {
+   "selector": ".chapter-button a",
+   "element_indexed": 2,
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".chapter-button a",
+   "element_indexed": 0,
+   "value": "href"
+  },
+  "chapter_ignore_domain": true,
+  "detail_first_chapter": {
+   "selector": "a.read-btn",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "metruyenhot.me",
+  "keys": [
+   "metruyenhot.me",
+   "www.metruyenhot.me",
+   "metruyenhotmoi.com",
+   "www.metruyenhotmoi.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1.rv-full-story-title",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": ".rv-chapt-title h2 > a",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".chapter-c"
+  },
+  "next_button": {
+   "selector": "li.detail-chapter-btn a",
+   "value": "href",
+   "action": 0,
+   "element_indexed": 1
+  },
+  "pre_button": {
+   "selector": "li.detail-chapter-btn a",
+   "value": "href",
+   "action": 0,
+   "element_indexed": 0
+  },
+  "data_loading_checker": [],
+  "data_ready_checker": [],
+  "chapter_ignore_domain": false,
+  "detail_first_chapter": {
+   "selector": ".list-chap ul li:first-child a",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "nhatruyen.site",
+  "keys": [
+   "nhatruyen.site",
+   "www.nhatruyen.site"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "ol.breadcrumb li a[href*='/truyen/']"
+  },
+  "chapter": {
+   "selector": "h1.page-title"
+  },
+  "content": {
+   "selector": ".entry-content"
+  },
+  "content_replaces": [
+   "[COTENT]"
+  ],
+  "next_button": {
+   "selector": ".story-navigation-container a",
+   "value": "href",
+   "element_indexed": 1
+  },
+  "pre_button": {
+   "selector": ".story-navigation-container a",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.nt-btn-first",
+   "value": "href"
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "metruyensangtac.com",
+  "keys": [
+   "metruyensangtac.com",
+   "www.metruyensangtac.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h3.chuong_ten",
+   "element_indexed": 0
+  },
+  "chapter": {
+   "selector": "h3.chuong_ten",
+   "element_indexed": 0
+  },
+  "content": {
+   "selector": ".chapter-content .content-text"
+  },
+  "next_button": {
+   "selector": ".next-chapter a.nav-chapter-btn",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": ".prev-chapter a.nav-chapter-btn",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "div.book-3d a[href*=\"/read/\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "data_loading_checker": [
+   "chapter-content"
+  ],
+  "data_ready_checker": [],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "navyteams.com",
+  "keys": [
+   "navyteam",
+   "navyteamz",
+   "navyteams"
+  ],
+  "title": {
+   "start": "<title>",
+   "end": "- Chương"
+  },
+  "chapter": {
+   "start": "id=\"chapterTitle\">",
+   "end": "</div>"
+  },
+  "content": {
+   "start": "id=\"novelContent\">",
+   "middle": "</strong></p>",
+   "end": "</p>                            </div>"
+  }
+ },
+ {
+  "domain": "www.msvtruyen.com",
+  "keys": [
+   "msvtruyen.com",
+   "www.msvtruyen.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1.text-color-custom.h2"
+  },
+  "chapter": {
+   "selector": "div#story-header h3"
+  },
+  "content": {
+   "selector": "div#chapter-content"
+  },
+  "next_button": {
+   "selector": "a.btn.btn-white:has(i.fa-arrow-right)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.btn.btn-white:has(i.fa-arrow-left)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.btn.btn-danger[href*='/doc-truyen/']",
+   "value": "href"
+  },
+  "data_loading_checker": [
+   "chapter-content"
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyenflow.com",
+  "keys": [
+   "truyenflow.com",
+   "www.truyenflow.com"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": "h2"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "a[href*=\"/chuong-\"]",
+   "value": "href",
+   "element_indexed": 1
+  },
+  "pre_button": {
+   "selector": "a[href*=\"/chuong-\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.btn-read",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "teamtruyen.com",
+  "keys": [
+   "teamtruyen.com",
+   "teamtruyen"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1.stitle"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": "#chapter-content, .chapter-content, .reading-content, article.content, .content-chapter"
+  },
+  "next_button": {
+   "selector": "a[title='Chương sau'], a:contains(Chương sau)",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[title='Chương trước'], a:contains(Chương trước)",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*='/chuong-1']",
+   "value": "href"
+  },
+  "data_loading_checker": [
+   "Đang tải"
+  ]
+ },
+ {
+  "domain": "www.truyencom.com",
+  "keys": [
+   "truyencom.com",
+   "www.truyencom.com",
+   "truyencom.blerino.com"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".truyen-title"
+  },
+  "chapter": {
+   "selector": ".chapter-title"
+  },
+  "content": {
+   "selector": ".chapter-c"
+  },
+  "next_button": {
+   "selector": "a#next_chap",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a#prev_chap",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": ".list-chapter li:first-child a",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "phamvuc.com",
+  "keys": [
+   "phamvuc.com",
+   "www.phamvuc.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": "h2"
+  },
+  "content": {
+   "selector": "#chapterContent"
+  },
+  "next_button": {
+   "selector": "a[title=\"Chương sau\"]",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[title=\"Chương trước\"]",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*='/chuong-1']",
+   "value": "href"
+  },
+  "data_loading_checker": [
+   "chapterContent"
+  ]
+ },
+ {
+  "domain": "zingtruyen.store",
+  "may_need_vpn": true,
+  "keys": [
+   "zingtruyen",
+   "www.zingtruyen.store"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".story-title a"
+  },
+  "chapter": {
+   "selector": "h2.chapter-title"
+  },
+  "content": {
+   "selector": "#chapter-content"
+  },
+  "content_removes": [
+   {
+    "start": "Bạn đang đọc truyện trên",
+    "end": "ZingTruyen"
+   }
+  ],
+  "next_button": {
+   "selector": "a.btn-next[rel=\"next\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.btn-prev[rel=\"prev\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "ul.chapters.v1.scroll li:first-child a",
+   "value": "href"
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "tieuthuyetdammy.net",
+  "keys": [
+   "tieuthuyetdammy.net",
+   "www.tieuthuyetdammy.net"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".sky-read-content .title > a",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "h1.title",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#js-sky-content"
+  },
+  "next_button": {
+   "selector": "a.btn-sky:has(i.icon-next-bold)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.btn-sky:has(i.icon-prev-bold)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": ".buttons a.btn-sky",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "data_loading_checker": [],
+  "data_ready_checker": [],
+  "chapter_ignore_domain": false
+ },
+ {
+  "domain": "webnovel.vn",
+  "keys": [
+   "webnovel.vn",
+   "www.webnovel.vn"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1.reader__title a",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "p.reader__chapter",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#chapter-c"
+  },
+  "next_button": {
+   "selector": "a[rel=\"next\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a[rel=\"prev\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(!p.endsWith('/'))p+='/';return window.location.origin+p+'chuong-1/';})()"
+ },
+ {
+  "domain": "dualeotruyenfull.net",
+  "keys": [
+   "dualeotruyenfull.net",
+   "www.dualeotruyenfull.net"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "#breadcrumb-manga",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "h1",
+   "value": "text",
+   "element_indexed": 0
+  },
+  "content": {
+   "selector": ".chapter-body"
+  },
+  "next_button": {
+   "selector": "#next-link",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev-link",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a.uk-button-primary[href*=\"chuong-1\"]",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "truyenchu.net",
+  "keys": [
+   "truyenchu.com.vn",
+   "truyenchu.net",
+   "truyenchu.vn",
+   "www.truyenchu.net"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": ".c-breadcrumb a[href*=\"/truyen/\"]",
+   "value": "text",
+   "element_indexed": 0
+  },
+  "chapter": {
+   "selector": "h1#chapter-heading",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".reading-content .text-left"
+  },
+  "next_button": {
+   "selector": "a.next_page",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.prev_page",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(!p.endsWith('/'))p+='/';return window.location.origin+p+'chuong-1/';})()"
+ },
+ {
+  "domain": "tieuthuyet.vn",
+  "keys": [
+   "tieuthuyet.vn",
+   "www.tieuthuyet.vn"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "a.truyen-title",
+   "value": "title"
+  },
+  "chapter": {
+   "selector": "a.chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#dynamic-content .chapter-content"
+  },
+  "next_button": {
+   "selector": "a#next_chap",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a#prev_chap",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(p.endsWith('/'))p=p.slice(0,-1);return window.location.origin+p+'/chuong-1';})()"
+ },
+ {
+  "domain": "tacgiaviet.com",
+  "keys": [
+   "tacgiaviet.com",
+   "www.tacgiaviet.com"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".reading-shell > a",
+   "element_indexed": 0
+  },
+  "chapter": {
+   "selector": ".chapter-reading-title"
+  },
+  "content": {
+   "selector": ".reading-content"
+  },
+  "next_button": {
+   "selector": "a.chapter-nav-next",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.chapter-nav-prev",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.story-detail-read-start",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "dichngay.com",
+  "use_webview": true,
+  "key": "dichngay",
+  "title": {
+   "start": "div class=&quot;breadcrumbs&quot;&gt;&lt;a href=",
+   "middle": "html&amp;amp;bid=&amp;amp;un=&quot; target=&quot;_parent&quot;&gt;",
+   "end": "&lt;/a&gt;&lt;/div&gt;\n&lt;header"
+  },
+  "chapter": {
+   "start": "id=&quot;nr_title&quot;&gt;",
+   "end": "&lt;/h1&gt;"
+  },
+  "content": {
+   "start": "&lt;article class=&quot;article-content&quot; id=&quot;nr1&quot;&gt;",
+   "end": "div class=&quot;pagination2&quot;&gt;"
+  },
+  "next_button": {
+   "start": "class=&quot;pagination2&quot;&gt;",
+   "middle": "Trang trước&lt;/a&gt;&lt;a href=&quot;",
+   "end": "&quot; target=&quot;_parent"
+  },
+  "pre_button": {
+   "start": "class=&quot;pagination2&quot;&gt;",
+   "middle": "Mục lục&lt;/a&gt;&lt;a href=&quot;",
+   "end": "&quot; target=&quot;_parent"
+  },
+  "content_replaces": [
+   "<p>",
+   "</p>"
+  ],
+  "content_removes": [
+   {
+    "start": "<a href",
+    "end": "target=\"_parent\">"
+   },
+   {
+    "start": "a href",
+    "end": "targetparent"
+   }
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "www.sitruyencv.com",
+  "keys": [
+   "sitruyencv.com",
+   "www.sitruyencv.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".sitr-title"
+  },
+  "chapter": {
+   "selector": "h3.ant-typography",
+   "element_indexed": 0
+  },
+  "content": {
+   "selector": ".reading-body"
+  },
+  "next_button": {
+   "selector": "a.sitr-next",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.sitr-prev",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a.sitr-first",
+   "value": "href"
+  },
+  "content_load_js": "(function(){var path=location.pathname;var sm=path.match(/\\/story\\/(\\d+)/);if(sm){var sid=sm[1];fetch('https://api.sitruyencv.com/api/stories/'+sid+'/translate-versions').then(function(r){return r.json();}).then(function(d){var vid=d&&d.data&&d.data[0]&&d.data[0].id;if(!vid||document.querySelector('.sitr-first'))return;var a=document.createElement('a');a.className='sitr-first';a.href=location.origin+'/read/'+sid+'/1?v='+vid;a.style.display='none';document.body.appendChild(a);}).catch(function(){});return;}var m=path.match(/\\/read\\/(\\d+)\\/(\\d+)/);if(!m)return;var s=m[1],c=parseInt(m[2],10),v=new URLSearchParams(location.search).get('v')||'';function mk(n,k){if(document.querySelector('.'+k))return;var a=document.createElement('a');a.className=k;a.href=location.origin+'/read/'+s+'/'+n+'?v='+v;a.style.display='none';document.body.appendChild(a);}mk(c+1,'sitr-next');if(c>1)mk(c-1,'sitr-prev');function put(t){if(!t||document.querySelector('.sitr-title'))return;var e=document.createElement('span');e.className='sitr-title';e.style.display='none';e.textContent=t;document.body.appendChild(e);}fetch('https://api.sitruyencv.com/api/stories/'+s).then(function(r){return r.json();}).then(function(d){put((d&&d.data&&d.data.title)||'');}).catch(function(){});setTimeout(function(){if(document.querySelector('.sitr-title'))return;var h=document.querySelector('h3.ant-typography');put(h?h.textContent.trim():'Truyện');},2500);})();",
+  "data_loading_checker": [
+   "reading-body",
+   "sitr-title"
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "plnovel.com",
+  "keys": [
+   "plnovel.com",
+   "www.plnovel.com"
+  ],
+  "use_html_parser": false,
+  "title": {
+   "start": "class=\"truyen-title\"",
+   "middle": ">",
+   "end": "</a>"
+  },
+  "chapter": {
+   "start": "class=\"chapter-title\"",
+   "middle": ">",
+   "end": "</a>"
+  },
+  "content": {
+   "start": "textContent\">",
+   "middle": "\n",
+   "end": "</script>"
+  },
+  "next_button": {
+   "start": "id=\"next_chap\" href=\"",
+   "end": "\""
+  },
+  "pre_button": {
+   "start": "id=\"prev_chap\" href=\"",
+   "end": "\""
+  },
+  "chapter_ignore_domain": true,
+  "detail_first_chapter_js": "(function(){var b=document.querySelector('#danh-sach-chuong');if(b&&b.nextElementSibling&&b.nextElementSibling.tagName==='A'&&b.nextElementSibling.href)return b.nextElementSibling.href;var l=document.querySelector('a[href*=\"/chuong-1/\"]');return l&&l.href?l.href:'';})()"
+ },
+ {
+  "domain": "aatruyen.net",
+  "keys": [
+   "aatruyen.net",
+   "www.aatruyen.net"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "h2.comics-title"
+  },
+  "chapter": {
+   "selector": "h1.chapter-title"
+  },
+  "content": {
+   "selector": ".story-content"
+  },
+  "next_button": {
+   "selector": "a.next_page",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.prev_page",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*=\"/chuong-1-\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyencn.com",
+  "keys": [
+   "truyencn.com",
+   "www.truyencn.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".bread a[href*=\"/b/\"]"
+  },
+  "chapter": {
+   "selector": ".txtnav h1.mytitle"
+  },
+  "content": {
+   "selector": "#tcn-content"
+  },
+  "next_button": {
+   "selector": "a.back",
+   "value": "href",
+   "element_indexed": 1
+  },
+  "pre_button": {
+   "selector": "a.back",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "content_load_js": "(function(){if(document.getElementById('tcn-content'))return;var tx=document.querySelector('.txtnav');if(!tx)return;var ps=tx.querySelectorAll(':scope > p');var html='';ps.forEach(function(p,i){var t=(p.textContent||'').trim();if(t&&!(i===0&&t.indexOf('Chương')===0))html+='<p>'+t+'</p>';});var d=document.createElement('div');d.id='tcn-content';d.style.display='none';d.innerHTML=html;document.body.appendChild(d);})();",
+  "data_loading_checker": [
+   "tcn-content"
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "vnthuquan.org",
+  "keys": [
+   "vnthuquan"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": ".chuongso_a",
+   "element_indexed": 1
+  },
+  "content": {
+   "selector": "#vntqTextContent"
+  }
+ },
+ {
+  "domain": "vietnamthuquan.eu",
+  "keys": [
+   "vietnamthuquan"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h2"
+  },
+  "chapter": {
+   "selector": ".chuongso"
+  },
+  "content": {
+   "selector": "#fontchu"
+  },
+  "next_button": {
+   "selector": "h1 span:last-child",
+   "value": "href",
+   "action": 1
+  },
+  "pre_button": {
+   "selector": "h1 span",
+   "value": "href",
+   "action": 1
+  }
+ },
+ {
+  "domain": "www.chivi.app",
+  "keys": [
+   "chivi"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "a.svelte-u6zczp",
+   "element_indexed": 3
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": ".reader"
+  },
+  "next_button": {
+   "selector": "a[data-kbd=\"⌃→\"]",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[data-kbd=\"⌃←\"]",
+   "value": "href"
+  },
+  "html_removes": [
+   {
+    "selector": ".reader ruby, .reader rt, .reader x-z"
+   }
+  ],
+  "data_ready_checker": [
+   "svelte-19z0z8p _dirty"
+  ]
+ },
+ {
+  "domain": "tieuthuyetmang.com",
+  "keys": [
+   "tieuthuyetmang"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "a:has(svg.lucide-chevron-left)"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": ".whitespace-pre-wrap"
+  },
+  "next_button": {
+   "selector": "a:has(svg.lucide-chevron-right)",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a:has(svg.lucide-chevron-left)",
+   "element_indexed": 1,
+   "value": "href"
+  }
+ },
+ {
+  "domain": "docln.sbs",
+  "keys": [
+   "docln.sbs",
+   "www.docln.sbs",
+   "docln.net"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".rd_sidebar-name h5 a"
+  },
+  "chapter": {
+   "selector": ".title-top h4"
+  },
+  "content": {
+   "selector": "#chapter-content"
+  },
+  "next_button": {
+   "selector": "a.rd_sd-button_item.rd_top-right",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.rd_sd-button_item.rd_top-left",
+   "value": "href"
+  },
+  "data_ready_checker": [
+   "chapter-c-protected"
+  ]
+ },
+ {
+  "domain": "docfull.vip",
+  "keys": [
+   "docfull"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": "h2"
+  },
+  "content": {
+   "selector": "div[data-chapter-content]"
+  },
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;return p.endsWith('/')?window.location.origin+p+'chuong-1/':window.location.origin+p+'/chuong-1/';})()",
+  "data_ready_checker": [
+   "Đang tải nội dung chương"
+  ],
+  "next_button": {
+   "selector": ".reader-nav-btn-dark",
+   "action": 1,
+   "element_indexed": 3,
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".reader-nav-btn-dark",
+   "element_indexed": 0,
+   "action": 1,
+   "value": "href"
+  }
+ },
+ {
+  "domain": "www.lacatruyen.vip",
+  "keys": [
+   "lacatruyen"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".chapter_chapter-content__info__JNMCs a"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": ".chapter-content-element"
+  },
+  "next_button": {
+   "selector": ".chapter_mobile-bottom-bar__nav--next__r_5a0",
+   "action": 1,
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".chapter_mobile-bottom-bar__nav__9kvzr",
+   "action": 1,
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){try{var d=document.getElementById('__NEXT_DATA__');if(!d)return'';var p=JSON.parse(d.textContent||'{}').props.pageProps||{};var s=p.firstChapter&&p.firstChapter[0]&&p.firstChapter[0].slug;return s?location.origin+'/chapter/'+s:'';}catch(e){return'';}})()"
+ },
+ {
+  "domain": "linhdi.vn",
+  "keys": [
+   "linhdi"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".ldi-book-title"
+  },
+  "chapter": {
+   "selector": ".ldi-chapter-title"
+  },
+  "content": {
+   "selector": ".ldi-content"
+  },
+  "next_button": {
+   "selector": "a.ldi-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.ldi-prev",
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){var p=location.pathname.replace(/\\/+$/,'').split('/');if(p.length>=3&&p[1]==='truyen'&&p[2])return location.origin+'/truyen/'+p[2]+'/chuong-1';return'';})()",
+  "content_load_js": "(function(){try{if(document.getElementById('ldi-parser-ready'))return;var ORIGIN='https://irpwtunykgndrnwlzbcr.supabase.co';var KEY='sb_publishable_telxqZeIf0tVLK7-Uf33Cw_iul7pdTn';var path=location.pathname.replace(/\\/+$/,'');var parts=path.split('/').filter(Boolean);if(parts[0]!=='truyen'||!parts[1])return;var slug=parts[1];var chapterNum=parts[2]&&/^chuong-\\d+$/i.test(parts[2])?parseInt(parts[2].replace(/[^0-9]/g,''),10):null;function put(tag,cls){var e=document.querySelector('.'+cls);if(!e){e=document.createElement(tag);e.className=cls;e.style.display='none';document.body.appendChild(e);}return e;}function ready(){if(document.getElementById('ldi-parser-ready'))return;var e=document.createElement('div');e.id='ldi-parser-ready';e.style.display='none';document.body.appendChild(e);}function req(url,opt){opt=opt||{};opt.headers=Object.assign({'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},opt.headers||{});return fetch(url,opt).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});}req(ORIGIN+'/rest/v1/stories?select=id,title,slug&moderation_status=eq.approved&slug=eq.'+encodeURIComponent(slug)+'&limit=1').then(function(rows){var s=rows&&rows[0];if(!s){ready();return;}put('span','ldi-book-title').textContent=s.title||'';if(chapterNum==null){put('a','ldi-first').href=location.origin+'/truyen/'+(s.slug||slug)+'/chuong-1';ready();return;}req(ORIGIN+'/rest/v1/rpc/get_story_reader_chapter',{method:'POST',body:JSON.stringify({p_story_id:s.id,p_chapter_number:chapterNum})}).then(function(rows2){var c=rows2&&rows2[0];if(c){put('span','ldi-chapter-title').textContent=c.title||('Chương '+chapterNum);put('div','ldi-content').innerHTML=c.content||c.preview_content||'';}return req(ORIGIN+'/rest/v1/rpc/get_story_visible_chapters',{method:'POST',body:JSON.stringify({p_story_id:s.id,p_limit:1000,p_offset:0,p_sort_ascending:true})});}).then(function(list){if(list&&list.length){for(var i=0;i<list.length;i++){if(list[i]&&list[i].chapter_number===chapterNum){if(i>0)put('a','ldi-prev').href=location.origin+'/truyen/'+(s.slug||slug)+'/chuong-'+list[i-1].chapter_number;if(i<list.length-1)put('a','ldi-next').href=location.origin+'/truyen/'+(s.slug||slug)+'/chuong-'+list[i+1].chapter_number;break;}}}ready();});});}catch(e){}})()",
+  "data_loading_checker": [
+   "ldi-parser-ready"
+  ]
+ },
+ {
+  "domain": "mongtruyen.com",
+  "keys": [
+   "mongtruyen"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".breadcrumb-item",
+   "element_indexed": 2
+  },
+  "chapter": {
+   "selector": ".mdv-san-pham-detail-chuong-title-text"
+  },
+  "content": {
+   "selector": "#noi_dung_truyen"
+  },
+  "next_button": {
+   "selector": ".mdv-chuong-button-sau",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".mdv-chuong-button-truoc",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".san-pham-show-read-next-btn a[href*='?chuong=1']",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "content_load_js": "(function(){try{if(typeof window.mtLoadChapterContent==='function'){window.mtLoadChapterContent({force:true,silent:true,retries:2,retryDelayMs:600});}}catch(e){}})()",
+  "data_ready_checker": [
+   "Vui lòng bật JavaScript để xem nội dung chương"
+  ]
+ },
+ {
+  "domain": "hatduahau.com",
+  "keys": [
+   "hatduahau"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "#breadcrumb-manga"
+  },
+  "chapter": {
+   "selector": "h1.uk-h2"
+  },
+  "content": {
+   "selector": "#chapter-content"
+  },
+  "next_button": {
+   "selector": "#next-link",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev-link",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a.uk-button-primary[href*='/chuong-1/']",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "data_ready_checker": [
+   "Đang tải nội dung..."
+  ]
+ },
+ {
+  "domain": "www.loppytoon.com",
+  "keys": [
+   "loppytoon"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".loppy-book-title, .manga-title.desktop-hidden, .manga-title"
+  },
+  "chapter": {
+   "selector": ".reader-header .chapter-info .chapter-title"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": ".toolbar-center .next-btn[href]:not([href='#'])",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".toolbar-center .prev-btn[href]:not([href='#'])",
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){try{var html=document.documentElement.innerHTML;var m=html.match(/const\\s+chapters\\s*=\\s*(\\[[\\s\\S]*?\\]);/);if(m&&m[1]){var arr=JSON.parse(m[1]);if(arr&&arr.length){arr.sort(function(a,b){return (a.position||0)-(b.position||0);});var s=arr[0]&&arr[0].slug;if(s){var p=location.pathname.replace(/\\/+$/,'');return location.origin+p+'/'+s;}}}var a=document.querySelector('.chapter-item[href*=\"/chuong-1\"],.chapter-item[href*=\"/chap-1\"]');return a&&a.href?a.href:'';}catch(e){return'';}})()",
+  "content_load_js": "(function(){try{function put(cls,txt){if(!txt||document.querySelector('.'+cls))return;var e=document.createElement('span');e.className=cls;e.style.display='none';e.textContent=txt.trim();document.body.appendChild(e);}var title=(document.title||'').replace(/\\s+-\\s+(Chương|Chap)\\s+[^-]+\\s+-\\s+LoppyToon\\s*$/i,'').replace(/\\s+-\\s+LoppyToon\\s*$/i,'');put('loppy-book-title',title);}catch(e){}})()"
+ },
+ {
+  "domain": "happypineappleee.wordpress.com",
+  "keys": [
+   "happypineappleee"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".hpe-book-title"
+  },
+  "chapter": {
+   "selector": ".wp-block-post-title"
+  },
+  "content": {
+   "selector": ".hpe-content"
+  },
+  "next_button": {
+   "selector": "a.hpe-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.hpe-prev",
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){try{var links=[].slice.call(document.querySelectorAll('a[href*=\"huyet-sac-linh-dong-chuong-\"]'));var best=null;links.forEach(function(a){var href=(a.href||'').split('#')[0].split('?')[0];if(/\\/feed\\/?$/i.test(href))return;var m=href.match(/huyet-sac-linh-dong-chuong-(\\d+)\\/?$/i);if(!m)return;var n=parseInt(m[1],10);if(!best||n<best.n)best={n:n,href:href};});return best?best.href:'';}catch(e){return'';}})()",
+  "content_load_js": "(function(){try{if(document.getElementById('hpe-ready'))return;var DETAIL='https://happypineappleee.wordpress.com/dam-my-huyet-sac-linh-dong/';function ready(){if(!document.getElementById('hpe-ready')){var r=document.createElement('div');r.id='hpe-ready';r.style.display='none';document.body.appendChild(r);}}function putText(cls,txt){if(!txt||document.querySelector('.'+cls))return;var e=document.createElement('span');e.className=cls;e.style.display='none';e.textContent=txt.trim();document.body.appendChild(e);}function putLink(cls,href){if(!href||document.querySelector('a.'+cls))return;var a=document.createElement('a');a.className=cls;a.href=href;a.style.display='none';document.body.appendChild(a);}function collect(doc){var map={};[].slice.call(doc.querySelectorAll('a[href*=\"huyet-sac-linh-dong-chuong-\"]')).forEach(function(a){var href=(a.href||a.getAttribute('href')||'').split('#')[0].split('?')[0];if(!href||/\\/feed\\/?$/i.test(href))return;if(href.charAt(0)==='/')href=location.origin+href;var m=href.match(/huyet-sac-linh-dong-chuong-(\\d+)\\/?$/i);if(m&&!map[m[1]])map[m[1]]=href;});return map;}var rawTitle=(document.querySelector('.wp-block-post-title')||{}).textContent||document.title||'';putText('hpe-book-title',rawTitle.replace(/\\s+[–-]\\s+Chương\\s*\\d+.*/i,'').replace(/\\s+[–-]\\s+Dứa Dui Dẻ\\s*$/i,'').trim());var content=document.querySelector('.entry-content');if(content&&!document.querySelector('.hpe-content')){var c=content.cloneNode(true);c.querySelectorAll('#jp-post-flair,.sharedaddy,.taxonomy-category,.post-navigation-link-previous,.post-navigation-link-next,script,style,iframe,form').forEach(function(e){e.remove();});c.querySelectorAll('a[href*=\"huyet-sac-linh-dong-chuong-\"]').forEach(function(a){var p=a.parentElement;if(p)p.remove();else a.remove();});var d=document.createElement('div');d.className='hpe-content';d.style.display='none';d.innerHTML=c.innerHTML;document.body.appendChild(d);}var cur=(location.pathname.match(/huyet-sac-linh-dong-chuong-(\\d+)\\/?$/i)||[])[1];function applyMap(map){var nums=Object.keys(map).map(function(n){return parseInt(n,10);}).sort(function(a,b){return a-b;});if(!cur&&nums.length)putLink('hpe-first',map[String(nums[0])]);if(cur){var n=parseInt(cur,10);putLink('hpe-prev',map[String(n-1)]);putLink('hpe-next',map[String(n+1)]);}}applyMap(collect(document));fetch(DETAIL).then(function(r){return r.text();}).then(function(html){var doc=new DOMParser().parseFromString(html,'text/html');applyMap(collect(doc));ready();}).catch(function(){ready();});setTimeout(ready,3000);}catch(e){try{var r=document.createElement('div');r.id='hpe-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+  "data_loading_checker": [
+   "hpe-ready"
+  ]
+ },
+ {
+  "domain": "truyenhdc.com",
+  "keys": [
+   "truyenhdc"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "#views",
+   "value": "data-title"
+  },
+  "chapter": {
+   "selector": ".container-breadcrumb .breadcrumb-item:last-child a"
+  },
+  "content": {
+   "selector": ".reading"
+  },
+  "next_button": {
+   "selector": ".next-chap-2 a",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": ".next-chap-1 a",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "#button_reading a",
+   "value": "href"
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "inkitt.com",
+  "keys": [
+   "inkitt.com",
+   "www.inkitt.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "#_ptitle",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "#_pchap",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#chapterText"
+  },
+  "html_removes": [
+   {
+    "selector": "[class*=comments-count]"
+   },
+   {
+    "selector": ".inline-comments-count-container"
+   }
+  ],
+  "data_loading_checker": [
+   "_ptitle",
+   "chapterText"
+  ],
+  "content_load_js": "(function(){try{document.querySelectorAll('[class*=comments-count]').forEach(function(e){e.remove();});var parts=location.pathname.split('/');var sid=parts[2],cn=parseInt(parts[4]||'0',10);if(!sid||!cn)return;var mk=function(id,val){var el=document.getElementById(id);if(!el){el=document.createElement('div');el.id=id;el.style.display='none';document.body.appendChild(el);}el.textContent=val||'';};mk('_ptitle','inkitt');mk('_pchap','Chuong '+cn);fetch('/api/stories/'+sid).then(function(r){return r.json();}).then(function(d){if(d&&d.title)mk('_ptitle',d.title);var ch=(d&&d.chapters||[]).find(function(c){return c.chapter_number===cn;});if(ch)mk('_pchap',ch.name);}).catch(function(e){});}catch(e){}})();void 0;",
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(p.indexOf('/chapters/')>=0)return '';if(p.charAt(p.length-1)==='/')p=p.slice(0,-1);return window.location.origin+p+'/chapters/1';})()"
+ },
+ {
+  "domain": "aztruyen.top",
+  "keys": [
+   "aztruyen.top",
+   "www.aztruyen.top"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": ".breadcrumb a[itemprop=\"item\"]",
+   "value": "text",
+   "element_indexed": 2
+  },
+  "chapter": {
+   "selector": ".chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "a.nextChapter",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.prevChapter",
+   "value": "href"
+  },
+  "detail_first_chapter_js": "(function(){var uls=document.querySelectorAll('ul.chapters');var best=null,mx=0;uls.forEach(function(u){var n=u.querySelectorAll('a[href]').length;if(n>mx){mx=n;best=u;}});if(best){var a=best.querySelector('a[href]');if(a)return a.href;}return '';})()"
+ },
+ {
+  "domain": "teenfic.net",
+  "keys": [
+   "teenfic.net",
+   "www.teenfic.net"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".breadcrumb a[itemprop=\"item\"]",
+   "value": "text",
+   "element_indexed": 1
+  },
+  "chapter": {
+   "selector": ".chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "a.nextChapter",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.prevChapter",
+   "value": "href"
+  },
+  "data_loading_checker": [
+   "chapter-content"
+  ],
+  "content_load_js": "void 0;",
+  "detail_first_chapter_js": "(function(){var uls=document.querySelectorAll('ul.chapters');var best=null,mx=0;uls.forEach(function(u){var n=u.querySelectorAll('a[href]').length;if(n>mx){mx=n;best=u;}});if(best){var a=best.querySelector('a[href]');if(a)return a.href;}return '';})()"
+ },
+ {
+  "domain": "webtruyendich.com",
+  "keys": [
+   "webtruyendich"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "a.text-center[href^=\"/truyen/\"]",
+   "value": "text",
+   "element_indexed": 0
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": "#article"
+  },
+  "next_button": {
+   "selector": ".next-link",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".pre-link",
+   "value": "href"
+  },
+  "data_loading_checker": [
+   "class=\"fade-in-paragraph"
+  ],
+  "content_load_js": "void 0;"
+ },
+ {
+  "domain": "dammy.me",
+  "keys": [
+   "dammy.me",
+   "www.dammy.me"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "#story_title",
+   "value": "value"
+  },
+  "chapter": {
+   "selector": "#chapter_title",
+   "value": "value"
+  },
+  "content": {
+   "selector": "#chapter-content-render"
+  },
+  "next_button": {
+   "selector": "a.dammy-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.dammy-prev",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "#control a.btn-warning",
+   "value": "href"
+  },
+  "content_load_js": "(function(){try{if(document.getElementById('dammy-ready'))return;function pseudoText(e){var c='';try{c=getComputedStyle(e,'::before').content||'';}catch(_){c='';}if(!c||c==='none'||c==='normal')return '';try{return JSON.parse(c);}catch(_){return c.replace(/^['\\\"]|['\\\"]$/g,'');}}document.querySelectorAll('#chapter-content-render span[class]').forEach(function(e){var t=pseudoText(e);if(t)e.textContent=t;});function putLink(cls,raw){if(!raw||document.querySelector('a.'+cls))return;var parts=raw.split(',');if(parts.length<2)return;var a=document.createElement('a');a.className=cls;a.href=location.origin+'/'+parts[0]+'/'+parts[1]+'.html';a.style.display='none';document.body.appendChild(a);}function nav(id,cls){var b=document.getElementById(id);if(!b)return;var oc=b.getAttribute('onclick')||'';var m=oc.match(/actionChangeChapter\\('([^']+)'\\)/);if(m)putLink(cls,m[1]);}nav('next_chapter_btn','dammy-next');nav('prev_chapter_btn','dammy-prev');var r=document.createElement('div');r.id='dammy-ready';r.style.display='none';document.body.appendChild(r);}catch(e){try{var r=document.createElement('div');r.id='dammy-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+  "data_loading_checker": [
+   "dammy-ready"
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyenh.top",
+  "keys": [
+   "truyenh.top",
+   "www.truyenh.top"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".truyen-title",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": ".chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".chapter-content"
+  },
+  "next_button": {
+   "selector": "#next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev_chap",
+   "value": "href"
+  },
+  "data_ready_checker": [
+   "workers.dev"
+  ],
+  "data_loading_checker": [
+   "__thchap"
+  ],
+  "content_load_js": "(function(){if(window.__thW)return;window.__thW=1;var f=function(){var c=document.querySelector('.chapter-content');if(!c)return false;var t=(c.textContent||'').trim();if(t.length>50&&t.indexOf('workers.dev')<0){if(!document.getElementById('__thchap')){var m=document.createElement('div');m.id='__thchap';m.style.display='none';document.body.appendChild(m);}return true;}return false;};if(!f()){var iv=setInterval(function(){if(f())clearInterval(iv);},250);}})();",
+  "detail_first_chapter": {
+   "selector": ".list-chapter a",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "khotruyenchu.fun",
+  "keys": [
+   "khotruyenchu.fun"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1"
+  },
+  "chapter": {
+   "selector": "h1"
+  },
+  "content": {
+   "selector": ".entry-content"
+  },
+  "content_replaces": [
+   "≣ Mục lục",
+   "Chương sau »",
+   "« Chương trước"
+  ],
+  "next_button": {
+   "selector": ".nav-next a",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": ".nav-prev a",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".btn-chuong-1",
+   "value": "href"
+  }
+ },
+ {
+  "domain": "hongngucoc.wordpress.com",
+  "keys": [
+   "hongngucoc.wordpress.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": ".entry-title",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": ".entry-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".entry-content"
+  },
+  "html_removes": [
+   {
+    "selector": "#jp-post-flair"
+   },
+   {
+    "selector": ".sharedaddy"
+   },
+   {
+    "selector": ".jp-relatedposts"
+   }
+  ],
+  "next_button": {
+   "selector": "a[rel=next]",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[rel=prev]",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".entry-content a[href*=\"-chuong-\"]",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "gaumeoteam.com",
+  "keys": [
+   "gaumeoteam.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": ".breadcrumb a",
+   "value": "text",
+   "element_indexed": 1
+  },
+  "chapter": {
+   "selector": "#chapter-heading",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".reading-content"
+  },
+  "next_button": {
+   "selector": ".nav-next a",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": ".nav-previous a",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(p.charAt(p.length-1)!=='/')p+='/';return window.location.origin+p+'chuong-1/';})()"
+ },
+ {
+  "domain": "itruyenchuz.org",
+  "keys": [
+   "itruyenchuz.org",
+   "www.itruyenchuz.org"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": ".chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".content"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href$=\"/chuong-1\"]",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "truyenhoan.com",
+  "keys": [
+   "truyenhoan.com",
+   "www.truyenhoan.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": "h1",
+   "value": "text",
+   "element_indexed": 0
+  },
+  "chapter": {
+   "selector": ".chapter-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#chapter-c"
+  },
+  "next_button": {
+   "selector": "#next_chap",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "#prev_chap",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href$=\"chuong-1.html\"]",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "eviehouse.wordpress.com",
+  "keys": [
+   "eviehouse.wordpress.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": false,
+  "title": {
+   "selector": ".entry-title",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": ".entry-title",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".entry-content"
+  },
+  "html_removes": [
+   {
+    "selector": "#jp-post-flair"
+   },
+   {
+    "selector": ".sharedaddy"
+   },
+   {
+    "selector": ".jp-relatedposts"
+   }
+  ],
+  "next_button": {
+   "selector": "a[rel=\"next\"]",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a[rel=\"prev\"]",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": ".entry-content a[href*=\"-chuong-\"]",
+   "value": "href",
+   "element_indexed": 0
+  }
+ },
+ {
+  "domain": "thungtruyen.com",
+  "keys": [
+   "thungtruyen.com",
+   "www.thungtruyen.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".reader-topbar__story",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "h1",
+   "value": "text"
+  },
+  "content": {
+   "selector": ".reader-article__content"
+  },
+  "detail_first_chapter": {
+   "selector": "a[href*=\"/chuong-\"]",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "data_loading_checker": [
+   "reader-article__content"
+  ],
+  "content_load_js": "void 0;",
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyentronbo.com",
+  "keys": [
+   "truyentronbo.com",
+   "www.truyentronbo.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": ".reading-container h3 a",
+   "value": "text"
+  },
+  "chapter": {
+   "selector": "h2",
+   "value": "text"
+  },
+  "content": {
+   "selector": "#reading-content"
+  },
+  "html_removes": [
+   {
+    "selector": "#reading-content style"
+   },
+   {
+    "selector": ".chapter-lock-banner"
+   }
+  ],
+  "content_load_js": "(function(){var n=0;var iv=setInterval(function(){n++;var b=document.querySelector('.chapter-lock-banner button');if(b){b.click();}var rc=document.querySelector('#reading-content');var tx=rc?(rc.textContent||''):'';if(rc&&rc.querySelectorAll('p').length>=3&&!document.querySelector('.chapter-lock-banner')&&tx.indexOf('Đang tải')<0){if(!document.getElementById('__ttbready')){var m=document.createElement('div');m.id='__ttbready';m.style.display='none';document.body.appendChild(m);}clearInterval(iv);}if(n>60){clearInterval(iv);}},250);})();",
+  "data_loading_checker": [
+   "__ttbready"
+  ],
+  "next_button": {
+   "selector": "a.nav-btn:not(.btn-secondary)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.nav-btn.btn-secondary",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": ".chapter-item",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyennet.org",
+  "keys": [
+   "truyennet.org",
+   "www.truyennet.org"
+  ],
+  "use_html_parser": true,
+  "title": {
+   "selector": "h1.current-book"
+  },
+  "chapter": {
+   "selector": "h2.current-chapter"
+  },
+  "content": {
+   "selector": "div#story"
+  },
+  "next_button": {
+   "selector": "a.next",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "pre_button": {
+   "selector": "a.back",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "detail_first_chapter": {
+   "selector": "a:has(span.btn_truyen)",
+   "value": "href",
+   "element_indexed": 0
+  },
+  "search": {
+   "url": "https://truyennet.org/tim-kiem?s=%s",
+   "urls": [
+    "https://truyennet.org/tim-kiem?s=%s"
+   ],
+   "item": {
+    "selector": ".truyen-list .item"
+   },
+   "title": {
+    "selector": "h3 a"
+   },
+   "link": {
+    "selector": "h3 a, a.cover",
+    "value": "href"
+   },
+   "author": {
+    "selector": "p.line"
+   },
+   "cover": {
+    "selector": "a.cover img, img",
+    "value": "src"
+   },
+   "story_url_regex": "^https?://(?:www\\.)?truyennet\\.org/[a-zA-Z0-9][a-zA-Z0-9-]{2,}/?$",
+   "exclude_url_regex": "(chuong|chapter|/tim-kiem|/the-loai|/danh-sach|/tac-gia|/tag/|/page/|/user)",
+   "story_url_templates": [
+    "https://truyennet.org/%d/"
+   ],
+   "generated": false,
+   "headers": {
+    "User-Agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) vBook TruyenNet/1.0"
+   },
+   "response_type": "html"
+  },
+  "use_webview": false
+ },
+ {
+  "domain": "dammy.cc",
+  "keys": [
+   "dammy.cc",
+   "www.dammy.cc"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "#story_title",
+   "value": "value"
+  },
+  "chapter": {
+   "selector": "#chapter_title",
+   "value": "value"
+  },
+  "content": {
+   "selector": "#chapter-content-render"
+  },
+  "next_button": {
+   "selector": "a.dammy-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.dammy-prev",
+   "value": "href"
+  },
+  "detail_first_chapter": {
+   "selector": "#control a.btn-warning",
+   "value": "href"
+  },
+  "html_removes": [
+   {
+    "selector": ".actcl"
+   }
+  ],
+  "content_load_js": "(function(){try{if(document.getElementById('dammy-ready'))return;function pseudoText(e){var c='';try{c=getComputedStyle(e,'::before').content||'';}catch(_){c='';}if(!c||c==='none'||c==='normal')return '';try{return JSON.parse(c);}catch(_){return c.replace(/^['\\\"]|['\\\"]$/g,'');}}document.querySelectorAll('#chapter-content-render span[class]').forEach(function(e){var t=pseudoText(e);if(t)e.textContent=t;});function putLink(cls,raw){if(!raw||document.querySelector('a.'+cls))return;var parts=raw.split(',');if(parts.length<2)return;var a=document.createElement('a');a.className=cls;a.href=location.origin+'/'+parts[0]+'/'+parts[1]+'.html';a.style.display='none';document.body.appendChild(a);}function nav(id,cls){var b=document.getElementById(id);if(!b)return;var oc=b.getAttribute('onclick')||'';var m=oc.match(/actionChangeChapter\\('([^']+)'\\)/);if(m)putLink(cls,m[1]);}nav('next_chapter_btn','dammy-next');nav('prev_chapter_btn','dammy-prev');var r=document.createElement('div');r.id='dammy-ready';r.style.display='none';document.body.appendChild(r);}catch(e){try{var r=document.createElement('div');r.id='dammy-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+  "data_loading_checker": [
+   "dammy-ready"
+  ],
+  "chapter_ignore_domain": true
+ },
+ {
+  "domain": "truyen-h.com",
+  "keys": [
+   "truyen-h.com",
+   "www.truyen-h.com"
+  ],
+  "use_html_parser": true,
+  "use_webview": true,
+  "title": {
+   "selector": "h1.story-title"
+  },
+  "chapter": {
+   "selector": "#chapterTitle"
+  },
+  "content": {
+   "selector": "#chapterContent"
+  },
+  "next_button": {
+   "selector": "a.th-next",
+   "value": "href"
+  },
+  "pre_button": {
+   "selector": "a.th-prev",
+   "value": "href"
+  },
+  "content_load_js": "(function(){try{if(document.getElementById('th-ready'))return;var n=parseInt((new URL(location.href)).searchParams.get('chapter')||'0',10);function put(cls,num){if(num<1||document.querySelector('a.'+cls))return;var uu=new URL(location.href);uu.searchParams.set('chapter',num);var a=document.createElement('a');a.className=cls;a.href=uu.toString();a.style.display='none';document.body.appendChild(a);}if(n>0){put('th-next',n+1);put('th-prev',n-1);}var r=document.createElement('div');r.id='th-ready';r.style.display='none';document.body.appendChild(r);}catch(e){try{var r=document.createElement('div');r.id='th-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+  "detail_first_chapter_js": "(function(){try{var id=(new URL(location.href)).searchParams.get('id');return id?location.origin+'/reader?story='+id+'&chapter=1':'';}catch(e){return '';}})()",
+  "data_loading_checker": [
+   "th-ready"
+  ],
+  "chapter_ignore_domain": true
+ }
+]
