@@ -1,18 +1,18 @@
 {
   "id": "wikicv.org",
   "name": "wikicv.org",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "wikicv.org",
-    "wikicv.net",
-    "wikicv",
-    "truyenwikidich.net",
     "truyenwikidich",
-    "wikidich.com",
+    "wikicv",
+    "wikicv.org",
     "wikidich.info"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://truyenwikidich.net/static/img/logo-wiki-b.gif",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wikicv.org/wikicv.org.js",
   "homepage_url": "https://wikicv.org",
   "capabilities": [
@@ -22,11 +22,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

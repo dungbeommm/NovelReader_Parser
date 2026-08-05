@@ -1,13 +1,16 @@
 {
   "id": "sangtacviet.xyz",
   "name": "sangtacviet.xyz",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "sangtacviet.xyz",
-    "sangtacviet"
+    "sangtacviet",
+    "sangtacviet.xyz"
   ],
   "use_webview": true,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://sangtacviet.xyz/favicon.png",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/sangtacviet.xyz/sangtacviet.xyz.js",
   "homepage_url": "https://sangtacviet.xyz",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

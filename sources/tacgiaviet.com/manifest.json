@@ -1,13 +1,16 @@
 {
   "id": "tacgiaviet.com",
   "name": "tacgiaviet.com",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "tacgiaviet.com",
     "www.tacgiaviet.com"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?sz=128&domain=tacgiaviet.com",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tacgiaviet.com/tacgiaviet.com.js",
   "homepage_url": "https://tacgiaviet.com",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

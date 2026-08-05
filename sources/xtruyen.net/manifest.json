@@ -1,0 +1,34 @@
+{
+  "id": "xtruyen.net",
+  "name": "xtruyen.net",
+  "version": 4,
+  "engine": 4,
+  "domains": [
+    "www.xtruyen.vn",
+    "xtruyen",
+    "xtruyen.net"
+  ],
+  "use_webview": true,
+  "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://xtruyen.net/wp-content/uploads/2025/12/cropped-xlogox-Copy-180x180.png",
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/xtruyen.net/xtruyen.net.js",
+  "homepage_url": "https://xtruyen.net",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "cover_smart",
+    "navigation",
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
+}

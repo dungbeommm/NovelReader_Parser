@@ -1,13 +1,16 @@
 {
   "id": "noveltoon.vn",
   "name": "noveltoon.vn",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "noveltoon.vn",
-    "noveltoon"
+    "noveltoon",
+    "noveltoon.vn"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://noveltoon.vn/official/noveltoon/icon-128.png",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/noveltoon.vn/noveltoon.vn.js",
   "homepage_url": "https://noveltoon.vn",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

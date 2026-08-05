@@ -1,0 +1,33 @@
+{
+  "id": "webnovel.com",
+  "name": "webnovel.com",
+  "version": 4,
+  "engine": 4,
+  "domains": [
+    "webnovel",
+    "webnovel.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://cdn.webnovel.vn/img/favicon.ico",
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webnovel.com/webnovel.com.js",
+  "homepage_url": "https://webnovel.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "cover_smart",
+    "navigation",
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
+}

@@ -1,0 +1,936 @@
+{
+  "engine": 4,
+  "count": 71,
+  "sources": [
+    {
+      "id": "aatruyen.net",
+      "domains": [
+        "aatruyen.net",
+        "www.aatruyen.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/aatruyen.net/aatruyen.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=aatruyen.net"
+    },
+    {
+      "id": "aztruyen.top",
+      "domains": [
+        "aztruyen.top",
+        "www.aztruyen.top"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/aztruyen.top/aztruyen.top.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://aztruyen.top/favicon.ico"
+    },
+    {
+      "id": "dammy.cc",
+      "domains": [
+        "dammy.cc",
+        "www.dammy.cc"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dammy.cc/dammy.cc.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=dammy.cc"
+    },
+    {
+      "id": "dammy.me",
+      "domains": [
+        "dammy.me",
+        "www.dammy.me"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dammy.me/dammy.me.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=dammy.me"
+    },
+    {
+      "id": "dichngay.com",
+      "domains": [
+        "dichngay.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dichngay.com/dichngay.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "docfull.vip",
+      "domains": [
+        "docfull",
+        "docfull.vip"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/docfull.vip/docfull.vip.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://docfull.vip/logo_docfull_vip.png"
+    },
+    {
+      "id": "docln.sbs",
+      "domains": [
+        "docln.net",
+        "docln.sbs",
+        "www.docln.sbs"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/docln.sbs/docln.sbs.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=docln.sbs"
+    },
+    {
+      "id": "dualeotruyenfull.net",
+      "domains": [
+        "dualeotruyenfull.net",
+        "www.dualeotruyenfull.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dualeotruyenfull.net/dualeotruyenfull.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://dualeotruyenfull.net/wp-content/uploads/2025/12/cropped-favicon-192x192.webp"
+    },
+    {
+      "id": "eviehouse.wordpress.com",
+      "domains": [
+        "eviehouse.wordpress.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/eviehouse.wordpress.com/eviehouse.wordpress.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=eviehouse.wordpress.com"
+    },
+    {
+      "id": "gaumeoteam.com",
+      "domains": [
+        "gaumeoteam.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/gaumeoteam.com/gaumeoteam.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://gaumeoteam.com/favicon.ico"
+    },
+    {
+      "id": "happypineappleee.wordpress.com",
+      "domains": [
+        "happypineappleee",
+        "happypineappleee.wordpress.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/happypineappleee.wordpress.com/happypineappleee.wordpress.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=happypineappleee.wordpress.com"
+    },
+    {
+      "id": "hatduahau.com",
+      "domains": [
+        "hatduahau",
+        "hatduahau.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/hatduahau.com/hatduahau.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=hatduahau.com"
+    },
+    {
+      "id": "hongngucoc.wordpress.com",
+      "domains": [
+        "hongngucoc.wordpress.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/hongngucoc.wordpress.com/hongngucoc.wordpress.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://hongngucoc.wordpress.com/favicon.ico"
+    },
+    {
+      "id": "inkitt.com",
+      "domains": [
+        "inkitt",
+        "inkitt.com",
+        "www.inkitt.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/inkitt.com/inkitt.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.inkitt.com/favicon.ico"
+    },
+    {
+      "id": "itruyenchuz.org",
+      "domains": [
+        "itruyenchuz.org",
+        "www.itruyenchuz.org"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/itruyenchuz.org/itruyenchuz.org.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=itruyenchuz.org"
+    },
+    {
+      "id": "khotruyenchu.fun",
+      "domains": [
+        "khotruyenchu.fun"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/khotruyenchu.fun/khotruyenchu.fun.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://khotruyenchu.fun/wp-content/uploads/2025/12/cropped-Logo-2-300x300.png"
+    },
+    {
+      "id": "linhdi.vn",
+      "domains": [
+        "linhdi",
+        "linhdi.vn"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/linhdi.vn/linhdi.vn.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.linhdi.vn/favicon.png"
+    },
+    {
+      "id": "lovetruyen.pro",
+      "domains": [
+        "lovetruyen.pro"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/lovetruyen.pro/lovetruyen.pro.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": true,
+      "logo": "https://lovetruyen.me/favicon.ico"
+    },
+    {
+      "id": "m.tangthuvien.top",
+      "domains": [
+        "m.tangthuvien.top"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/m.tangthuvien.top/m.tangthuvien.top.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": true,
+      "logo": "https://play-lh.googleusercontent.com/ySl8uNRjXrdZoY4xJZWZ0A875z4lTVLvJckaE3ECsL8OitY0g5UES9QMpNhO7OO1hH4=w480-h960-rw"
+    },
+    {
+      "id": "metruyenhot.me",
+      "domains": [
+        "metruyenhot.me",
+        "metruyenhotmoi.com",
+        "www.metruyenhot.me",
+        "www.metruyenhotmoi.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/metruyenhot.me/metruyenhot.me.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://metruyenhot.me/frontend/images/logo.png"
+    },
+    {
+      "id": "metruyensangtac.com",
+      "domains": [
+        "metruyensangtac.com",
+        "www.metruyensangtac.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/metruyensangtac.com/metruyensangtac.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://metruyensangtac.com/favicon.ico"
+    },
+    {
+      "id": "mongtruyen.com",
+      "domains": [
+        "mongtruyen",
+        "mongtruyen.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/mongtruyen.com/mongtruyen.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://mongtruyen.com/img_data/images/mong-truyen/android-chrome-512x512.png"
+    },
+    {
+      "id": "navyteams.com",
+      "domains": [
+        "navyteam",
+        "navyteams",
+        "navyteams.com",
+        "navyteamz"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/navyteams.com/navyteams.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://navyteamz.com/storage/site/UTXsBXH3MCbGasHyEXINMrWKSqzTCkRL865M2PMl.png"
+    },
+    {
+      "id": "nhatruyen.site",
+      "domains": [
+        "nhatruyen.site",
+        "www.nhatruyen.site"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/nhatruyen.site/nhatruyen.site.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://nhatruyen.site/wp-content/uploads/2026/02/cropped-Nhatruyen_Logo-192x192.jpg"
+    },
+    {
+      "id": "noveltoon.mobi",
+      "domains": [
+        "noveltoon",
+        "noveltoon.mobi"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/noveltoon.mobi/noveltoon.mobi.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "noveltoon.vn",
+      "domains": [
+        "noveltoon",
+        "noveltoon.vn"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/noveltoon.vn/noveltoon.vn.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://noveltoon.vn/official/noveltoon/icon-128.png"
+    },
+    {
+      "id": "ntruyen.lat",
+      "domains": [
+        "ntruyen.lat",
+        "ntruyen.xyz"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/ntruyen.lat/ntruyen.lat.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://ntruyen.xyz/imgs/logo.webp"
+    },
+    {
+      "id": "phamvuc.com",
+      "domains": [
+        "phamvuc.com",
+        "www.phamvuc.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/phamvuc.com/phamvuc.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://phamvuc.com/assets/images/logo.jpg?v=5"
+    },
+    {
+      "id": "plnovel.com",
+      "domains": [
+        "plnovel.com",
+        "www.plnovel.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/plnovel.com/plnovel.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=plnovel.com"
+    },
+    {
+      "id": "sangtacviet.xyz",
+      "domains": [
+        "sangtacviet",
+        "sangtacviet.xyz"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/sangtacviet.xyz/sangtacviet.xyz.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://sangtacviet.xyz/favicon.png"
+    },
+    {
+      "id": "tacgiaviet.com",
+      "domains": [
+        "tacgiaviet.com",
+        "www.tacgiaviet.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tacgiaviet.com/tacgiaviet.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=tacgiaviet.com"
+    },
+    {
+      "id": "teamtruyen.com",
+      "domains": [
+        "teamtruyen",
+        "teamtruyen.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/teamtruyen.com/teamtruyen.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://teamtruyen.com/images/brand/logo-64.png"
+    },
+    {
+      "id": "teenfic.net",
+      "domains": [
+        "teenfic.net",
+        "www.teenfic.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/teenfic.net/teenfic.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://teenfic.net/favicon.ico"
+    },
+    {
+      "id": "thungtruyen.com",
+      "domains": [
+        "thungtruyen.com",
+        "www.thungtruyen.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/thungtruyen.com/thungtruyen.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=thungtruyen.com"
+    },
+    {
+      "id": "tieuthuyet.vn",
+      "domains": [
+        "tieuthuyet.vn",
+        "www.tieuthuyet.vn"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyet.vn/tieuthuyet.vn.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://tieuthuyet.vn/fav/favicon.ico"
+    },
+    {
+      "id": "tieuthuyetdammy.net",
+      "domains": [
+        "tieuthuyetdammy.net",
+        "www.tieuthuyetdammy.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyetdammy.net/tieuthuyetdammy.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://tieuthuyetdammy.net/wp-content/themes/imanga/assets/images/logo.png"
+    },
+    {
+      "id": "tieuthuyetmang.com",
+      "domains": [
+        "tieuthuyetmang",
+        "tieuthuyetmang.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/tieuthuyetmang.com/tieuthuyetmang.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "truyen-h.com",
+      "domains": [
+        "truyen-h.com",
+        "www.truyen-h.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyen-h.com/truyen-h.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyen-h.com"
+    },
+    {
+      "id": "truyenchu.net",
+      "domains": [
+        "truyenchu.net",
+        "www.truyenchu.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenchu.net/truyenchu.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://truyenchu.net/wp-content/uploads/2025/01/favicon-32x32-1.png"
+    },
+    {
+      "id": "truyencn.com",
+      "domains": [
+        "truyencn.com",
+        "www.truyencn.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyencn.com/truyencn.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyencn.com"
+    },
+    {
+      "id": "truyendich.store",
+      "domains": [
+        "truyendich.ai",
+        "truyendich.live",
+        "truyendich.store",
+        "truyendich.vip"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyendich.store/truyendich.store.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyendich.ai"
+    },
+    {
+      "id": "truyenflow.com",
+      "domains": [
+        "truyenflow.com",
+        "www.truyenflow.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenflow.com/truyenflow.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://truyenflow.com/favicon.ico"
+    },
+    {
+      "id": "truyenfull.live",
+      "domains": [
+        "truyenfull.live",
+        "truyenfull.today",
+        "truyenfull.vision",
+        "truyenfull.vn"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenfull.live/truyenfull.live.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://static.truyenfull.today/favicons/favicon-192x192.png"
+    },
+    {
+      "id": "truyenh.top",
+      "domains": [
+        "truyenh.top",
+        "www.truyenh.top"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenh.top/truyenh.top.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://truyenh.top/favicon.ico"
+    },
+    {
+      "id": "truyenhdc.com",
+      "domains": [
+        "truyenhdc",
+        "truyenhdc.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenhdc.com/truyenhdc.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyenhdc.com"
+    },
+    {
+      "id": "truyenhoan.com",
+      "domains": [
+        "truyenhoan.com",
+        "www.truyenhoan.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenhoan.com/truyenhoan.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyenhoan.com"
+    },
+    {
+      "id": "truyennet.org",
+      "domains": [
+        "truyennet.org",
+        "www.truyennet.org"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyennet.org/truyennet.org.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://truyennet.org/favicon.ico"
+    },
+    {
+      "id": "truyentronbo.com",
+      "domains": [
+        "truyentronbo.com",
+        "www.truyentronbo.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyentronbo.com/truyentronbo.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyentronbo.com"
+    },
+    {
+      "id": "vietnamthuquan.eu",
+      "domains": [
+        "vietnamthuquan",
+        "vietnamthuquan.eu"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/vietnamthuquan.eu/vietnamthuquan.eu.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "vnthuquan.org",
+      "domains": [
+        "vnthuquan",
+        "vnthuquan.org"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/vnthuquan.org/vnthuquan.org.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "wattpad.com",
+      "domains": [
+        "wattpad.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wattpad.com/wattpad.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": true,
+      "logo": "https://static.wattpad.com/img/logos/wp-logo-orange.png"
+    },
+    {
+      "id": "webnovel.com",
+      "domains": [
+        "webnovel",
+        "webnovel.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webnovel.com/webnovel.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://cdn.webnovel.vn/img/favicon.ico"
+    },
+    {
+      "id": "webnovel.vn",
+      "domains": [
+        "webnovel.vn",
+        "www.webnovel.vn"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webnovel.vn/webnovel.vn.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://cdn.webnovel.vn/img/favicon.ico"
+    },
+    {
+      "id": "webtruyendich.com",
+      "domains": [
+        "webtruyendich",
+        "webtruyendich.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webtruyendich.com/webtruyendich.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "wikicv.org",
+      "domains": [
+        "truyenwikidich",
+        "wikicv",
+        "wikicv.org",
+        "wikidich.info"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wikicv.org/wikicv.org.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://truyenwikidich.net/static/img/logo-wiki-b.gif"
+    },
+    {
+      "id": "wikidichvn.com",
+      "domains": [
+        "wikidichvn.com",
+        "www.wikidichvn.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wikidichvn.com/wikidichvn.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=wikidichvn.com"
+    },
+    {
+      "id": "wuxiaworld.com",
+      "domains": [
+        "wuxiaworld.com",
+        "www.wuxiaworld.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wuxiaworld.com/wuxiaworld.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.wuxiaworld.com/favicon-32x32.png"
+    },
+    {
+      "id": "www.chivi.app",
+      "domains": [
+        "chivi",
+        "www.chivi.app"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.chivi.app/www.chivi.app.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": ""
+    },
+    {
+      "id": "www.lacatruyen.vip",
+      "domains": [
+        "lacatruyen",
+        "www.lacatruyen.vip"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.lacatruyen.vip/www.lacatruyen.vip.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.lacatruyen.vip/images/logo/logo-laca-192.webp"
+    },
+    {
+      "id": "www.loppytoon.com",
+      "domains": [
+        "loppytoon",
+        "www.loppytoon.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.loppytoon.com/www.loppytoon.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=loppytoon.com"
+    },
+    {
+      "id": "www.metruyenchuvn.com",
+      "domains": [
+        "metruyenchuvn.com",
+        "www.metruyenchuvn.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.metruyenchuvn.com/www.metruyenchuvn.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://metruyenchuvn.com/images/logo.png"
+    },
+    {
+      "id": "www.msvtruyen.com",
+      "domains": [
+        "msvtruyen.com",
+        "www.msvtruyen.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.msvtruyen.com/www.msvtruyen.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.msvtruyen.com/photos/default/resize-2.png"
+    },
+    {
+      "id": "www.sitruyencv.com",
+      "domains": [
+        "sitruyencv.com",
+        "www.sitruyencv.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.sitruyencv.com/www.sitruyencv.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?sz=128&domain=sitruyencv.com"
+    },
+    {
+      "id": "www.sstruyen.net",
+      "domains": [
+        "www.sstruyen.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.sstruyen.net/www.sstruyen.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv30x4ZZLE9K-JhHGkoYPBiyGtOMhz2aGJIw&s"
+    },
+    {
+      "id": "www.truyencom.com",
+      "domains": [
+        "truyencom.blerino.com",
+        "truyencom.com",
+        "www.truyencom.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.truyencom.com/www.truyencom.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://cdn.truyencom.com/truyencom_logo.png"
+    },
+    {
+      "id": "www.truyenmoikk.com",
+      "domains": [
+        "truyenmoikk",
+        "truyenmoiqq",
+        "truyenmoiss",
+        "www.truyenmoikk.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.truyenmoikk.com/www.truyenmoikk.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://truyenmoikk.com/favicon.ico"
+    },
+    {
+      "id": "www.truyenyy.co",
+      "domains": [
+        "truyenyy.co",
+        "www.truyenyy.co"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.truyenyy.co/www.truyenyy.co.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": false,
+      "logo": "https://www.google.com/s2/favicons?domain=truyenyy.co&sz=128"
+    },
+    {
+      "id": "www.tvtruyen.com",
+      "domains": [
+        "www.tvtruyen.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.tvtruyen.com/www.tvtruyen.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": true,
+      "logo": "https://www.tvtruyen.com/public/assets/images/logo-truyentv.webp"
+    },
+    {
+      "id": "www.wattpad.com",
+      "domains": [
+        "wattpad.com",
+        "www.wattpad.com"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.wattpad.com/www.wattpad.com.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": true,
+      "logo": "https://static.wattpad.com/img/logos/wp-logo-orange.png"
+    },
+    {
+      "id": "xtruyen.net",
+      "domains": [
+        "www.xtruyen.vn",
+        "xtruyen",
+        "xtruyen.net"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/xtruyen.net/xtruyen.net.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": true,
+      "may_need_vpn": false,
+      "logo": "https://xtruyen.net/wp-content/uploads/2025/12/cropped-xlogox-Copy-180x180.png"
+    },
+    {
+      "id": "zingtruyen.store",
+      "domains": [
+        "www.zingtruyen.store",
+        "zingtruyen",
+        "zingtruyen.store"
+      ],
+      "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/zingtruyen.store/zingtruyen.store.js",
+      "version": 4,
+      "engine": 4,
+      "use_webview": false,
+      "may_need_vpn": true,
+      "logo": "https://zingtruyen.store/asset/favicon.ico"
+    }
+  ]
+}

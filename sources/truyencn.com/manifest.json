@@ -1,13 +1,16 @@
 {
   "id": "truyencn.com",
   "name": "truyencn.com",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "truyencn.com",
     "www.truyencn.com"
   ],
   "use_webview": true,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?sz=128&domain=truyencn.com",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyencn.com/truyencn.com.js",
   "homepage_url": "https://truyencn.com",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

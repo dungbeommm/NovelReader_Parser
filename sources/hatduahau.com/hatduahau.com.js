@@ -1,37 +1,83 @@
-/* NovelReader source: hatduahau.com | Engine v3 (vBook-style rich metadata). Auto-generated. */
+/* NovelReader source: hatduahau.com | Engine v4 (VBook + NovelReader APK cover/story). Auto-generated. */
 (function (global) {
   "use strict";
 
-  const config = {"domain":"hatduahau.com","keys":["hatduahau"],"use_html_parser":true,"use_webview":true,"title":{"selector":"#breadcrumb-manga"},"chapter":{"selector":"h1.uk-h2"},"content":{"selector":"#chapter-content"},"next_button":{"selector":"#next-link","value":"href"},"pre_button":{"selector":"#prev-link","value":"href"},"detail_first_chapter":{"selector":"a.uk-button-primary[href*='/chuong-1/']","value":"href","element_indexed":0},"data_ready_checker":["Đang tải nội dung..."]};
-  const VERSION = 3;
-  const ENGINE = 3;
+  const config = {"logo":"https://www.google.com/s2/favicons?sz=128&domain=hatduahau.com","domain":"hatduahau.com","keys":["hatduahau","hatduahau.com"],"use_html_parser":true,"use_webview":true,"title":{"selector":"#breadcrumb-manga"},"chapter":{"selector":"h1.uk-h2"},"content":{"selector":"#chapter-content"},"next_button":{"selector":"#next-link","value":"href"},"pre_button":{"selector":"#prev-link","value":"href"},"detail_first_chapter":{"selector":"a.uk-button-primary[href*='/chuong-1/']","value":"href","element_indexed":0},"data_ready_checker":["Đang tải nội dung..."]};
+  const VERSION = 4;
+  const ENGINE = 4;
 
   /* ------------------------------------------------------------------ *
-   * Hằng số dò tìm
+   * Hằng số dò tìm (chuẩn hoá từ vBook detail/search + APK parser.json)
    * ------------------------------------------------------------------ */
-  const COMMON_CONTENT = "#chapter-c,.chapter-c,#chapter-content,.chapter-content,.reading-content,.entry-content,.content-chapter,.chapter-body,#chapterbody,#chr-content,.chr-c,#content,.text-content,.content-body-wrapper,article .content,.post-content,.article-content,.box-chap,.reader-content,.contentbox";
-  const CHAPTER_PATTERN = /(chuong|chapter|chap|episode|\/c\/|-c-|tap)[-_\/]?\d/i;
-  const BAD_BLOCK = /(comment|footer|header|menu|nav|sidebar|breadcrumb|share|social|advert|\bads?\b|banner|related|recommend|widget|pagination)/i;
-  const JUNK_INLINE = /(quảng cáo|nguồn:\s*truyen|đọc truyện tại|vui lòng đăng nhập|báo lỗi chương|donate)/i;
+  const COMMON_CONTENT = "#chapter-c,.chapter-c,#chapter-content,.chapter-content,.reading-content,.entry-content,.content-chapter,.chapter-body,#chapterbody,#chr-content,.chr-c,#content,.text-content,.content-body-wrapper,article .content,.post-content,.article-content,.box-chap,.reader-content,.contentbox,#inner_chap_content_1,.chap-content,#bookContentBody";
+  const CHAPTER_PATTERN = /(chuong|chapter|chap|episode|\/c\/|-c-|tap|quyen)[-_\/]?\d/i;
+  const BAD_BLOCK = /(comment|footer|header|menu|nav|sidebar|breadcrumb|share|social|advert|\bads?\b|banner|related|recommend|widget|pagination|popup)/i;
+  const JUNK_INLINE = /(quảng cáo|nguồn:\s*truyen|đọc truyện tại|vui lòng đăng nhập|báo lỗi chương|donate|patreon|ko-fi)/i;
+  const BAD_COVER = /(logo|favicon|sprite|icon[_-]?\d|avatar|blank|placeholder|1x1|pixel|spacer|loading\.gif|ads?[_-]|banner|button)/i;
 
   const LABELS = {
-    author: ["tác giả", "tacgia", "author", "作者"],
+    author: ["tác giả", "tacgia", "author", "作者", "au"],
     artist: ["họa sĩ", "minh họa", "artist", "illustrator"],
-    translator: ["dịch giả", "người dịch", "nhóm dịch", "converter", "editor", "translator"],
+    translator: ["dịch giả", "người dịch", "nhóm dịch", "converter", "editor", "translator", "nhóm"],
     genres: ["thể loại", "theloai", "genre", "genres", "category", "danh mục", "分类"],
     tags: ["tag", "tags", "từ khóa", "thẻ"],
     status: ["trạng thái", "tình trạng", "status", "状态"],
-    source: ["nguồn", "source"],
+    source: ["nguồn", "source", "raw"],
     chapters: ["số chương", "số chapter", "chương", "chapters"],
     views: ["lượt đọc", "lượt xem", "lượt view", "view", "views", "đọc"],
-    rating: ["đánh giá", "điểm", "rating", "vote"],
+    rating: ["đánh giá", "điểm", "rating", "vote", "score"],
     updated: ["cập nhật", "mới nhất", "updated", "last update"],
     words: ["số từ", "số chữ", "word count", "字数"]
   };
 
   const STATUS_DONE = /(hoàn thành|hoàn tất|full|completed|complete|đã xong|đã hoàn|已完结|完本)/i;
-  const STATUS_ONGOING = /(đang ra|đang tiến hành|đang cập nhật|ongoing|updating|连载)/i;
+  const STATUS_ONGOING = /(đang ra|đang tiến hành|đang cập nhật|còn tiếp|ongoing|updating|连载)/i;
   const STATUS_DROP = /(tạm ngưng|tạm dừng|drop|dropped|ngừng)/i;
+
+  const COVER_SELECTORS = [
+    'meta[property="og:image"]',
+    'meta[property="og:image:secure_url"]',
+    'meta[name="twitter:image"]',
+    'meta[itemprop="image"]',
+    'meta[itemprop="thumbnailUrl"]',
+    '[itemprop="thumbnailUrl"]',
+    'div.book img',
+    '.book img',
+    '.book-cover img',
+    '.book-img img',
+    '.story-cover img',
+    '.novel-cover img',
+    '.series-cover img',
+    '.cover img',
+    '.thumb img',
+    '.thumbnail img',
+    '.image-story img',
+    '#anhbia img',
+    '.books img',
+    '.info-holder img',
+    '.book-info img',
+    '.book-information img',
+    'img[itemprop="image"]',
+    '.detail img',
+    '.wrap-detail img',
+    'picture source',
+    '.cover source'
+  ];
+
+  const IMAGE_ATTRS = [
+    "data-pagespeed-high-res-src",
+    "data-lazy-src",
+    "data-original",
+    "data-src",
+    "data-url",
+    "data-cfsrc",
+    "data-image",
+    "data-bg",
+    "data-background",
+    "data-srcset",
+    "srcset",
+    "src"
+  ];
 
   /* ------------------------------------------------------------------ *
    * Tiện ích DOM
@@ -57,7 +103,7 @@
     for (let i = 0; i < selector.length; i++) {
       const ch = selector[i];
       if (quote) { if (ch === quote && selector[i - 1] !== "\\") quote = ""; continue; }
-      if (ch === "\"" || ch === "'") { quote = ch; continue; }
+      if (ch === '"' || ch === "'") { quote = ch; continue; }
       if (ch === "[") square++; else if (ch === "]") square = Math.max(0, square - 1);
       else if (ch === "(") round++; else if (ch === ")") round = Math.max(0, round - 1);
       else if (ch === "," && square === 0 && round === 0) { out.push(selector.slice(start, i).trim()); start = i + 1; }
@@ -100,8 +146,10 @@
   }
 
   function absolute(base, value) {
-    if (!value || value === "#" || /^javascript:/i.test(value)) return "";
-    try { return new URL(value, base).href; } catch (_) { return String(value).trim(); }
+    if (!value || value === "#" || /^javascript:/i.test(value) || /^data:/i.test(value)) return "";
+    let v = String(value).trim().replace(/^['"]|['"]$/g, "");
+    if (v.startsWith("//")) v = "https:" + v;
+    try { return new URL(v, base || "https://example.com").href; } catch (_) { return v; }
   }
 
   function unique(list) {
@@ -115,12 +163,16 @@
   }
 
   function toNumber(value) {
-    const raw = String(value == null ? "" : value).replace(/[.,\s]/g, "").match(/\d+(?:\d*)/);
-    if (!raw) return null;
-    let n = parseInt(raw[0], 10);
-    if (/k\b/i.test(String(value))) n *= 1000;
-    if (/m\b|tr\b|triệu/i.test(String(value))) n *= 1000000;
-    return Number.isFinite(n) ? n : null;
+    const s = String(value == null ? "" : value).trim().toLowerCase();
+    if (!s) return null;
+    const m = s.replace(/,/g, ".").match(/(\d+(?:\.\d+)?)\s*([kmbtriệu]*)/i);
+    if (!m) return null;
+    let n = parseFloat(m[1]);
+    const u = m[2] || "";
+    if (/^k/i.test(u)) n *= 1000;
+    else if (/^m|tr|triệu/i.test(u)) n *= 1000000;
+    else if (/^b/i.test(u)) n *= 1000000000;
+    return Number.isFinite(n) ? Math.round(n) : null;
   }
 
   function toFloat(value) {
@@ -128,8 +180,12 @@
     return m ? parseFloat(m[0]) : null;
   }
 
+  function hostOf(url) {
+    try { const u = new URL(url); return `${u.protocol}//${u.host}`; } catch (_) { return ""; }
+  }
+
   /* ------------------------------------------------------------------ *
-   * Field resolver (tương thích config cũ)
+   * Field resolver (tương thích config cũ APK NovelReader)
    * ------------------------------------------------------------------ */
   function slice(raw, field) {
     if (!field || !field.start) return "";
@@ -151,11 +207,16 @@
     if (!name || name === "text") return text(el);
     if (name === "html") return el.innerHTML || "";
     let value = attr(el, name);
-    if (["href", "src", "data-src", "data-url", "data-href"].includes(name)) value = absolute(baseUrl, value);
-    return String(value || text(el)).trim();
+    if (!value && field.fallback_value) value = attr(el, field.fallback_value);
+    if (["href", "src", "data-src", "data-url", "data-href", "data-image", "data-original", "data-lazy-src", "data-pagespeed-high-res-src", "srcset", "content"].includes(name) || field.fallback_value) {
+      if (name === "srcset" || field.fallback_value === "srcset") value = bestFromSrcset(value || attr(el, "srcset")) || value;
+      value = absolute(baseUrl, value);
+    }
+    if (!value && (!name || name === "text")) return text(el);
+    return String(value || "").trim();
   }
 
-  function firstText(root, selectors, baseUrl) {
+  function firstText(root, selectors) {
     for (const selector of selectors) {
       const el = one(root, selector);
       if (!el) continue;
@@ -174,28 +235,48 @@
     for (const item of selectors || []) {
       const selector = typeof item === "string" ? item : (item && item.selector);
       if (!selector) continue;
-      for (const node of queryAll(root, selector)) node.remove();
+      for (const node of queryAll(root, selector)) try { node.remove(); } catch (_) {}
     }
   }
 
   function htmlToText(node) {
     if (!node) return "";
     const clone = node.cloneNode(true);
-    removeNodes(clone, ["script", "style", "noscript", "template", "iframe", "svg", "canvas"]);
+    removeNodes(clone, ["script", "style", "noscript", "template", "iframe", "svg", "canvas", "ins"]);
     for (const br of queryAll(clone, "br")) br.replaceWith("\n");
     for (const p of queryAll(clone, "p,div,section,article,li,h1,h2,h3,h4")) p.append("\n");
     return text(clone).replace(/ *\n */g, "\n").replace(/\n{3,}/g, "\n\n").trim();
   }
 
-  function sanitizeHtml(node) {
+  function sanitizeHtml(node, keepImages) {
     if (!node) return "";
     const clone = node.cloneNode(true);
-    removeNodes(clone, ["script", "style", "noscript", "template", "iframe", "svg", "canvas", "form", "button", "ins", ".ads", ".ads-responsive", "[class*=advert]", "[id*=advert]"]);
-    for (const el of queryAll(clone, "*")) {
-      for (const name of Array.from(el.attributes || []).map(a => a.name)) {
-        if (!["href", "src", "alt", "title"].includes(name)) { try { el.removeAttribute(name); } catch (_) {} }
+    removeNodes(clone, ["script", "style", "noscript", "template", "iframe", "svg", "canvas", "form", "button", "ins", ".ads", ".ads-responsive", "[class*=advert]", "[id*=advert]", "[style*='font-size:0']", "[style*='font-size: 0']"]);
+    // vBook chap.js: remove bare anchors often used for ads
+    for (const a of queryAll(clone, "a")) {
+      const href = attr(a, "href");
+      const t = text(a);
+      if (!href || /ads|click|bit\.ly|goo\.gl/i.test(href) || (t && JUNK_INLINE.test(t))) {
+        try { a.replaceWith(document.createTextNode(t)); } catch (_) {
+          try { a.remove(); } catch (__) {}
+        }
       }
-      if (JUNK_INLINE.test(text(el)) && text(el).length < 120) el.remove();
+    }
+    for (const el of queryAll(clone, "*")) {
+      const tag = (el.tagName || "").toLowerCase();
+      const keep = keepImages && tag === "img"
+        ? ["src", "data-src", "data-original", "data-lazy-src", "alt", "title"]
+        : ["href", "src", "alt", "title"];
+      for (const name of Array.from(el.attributes || []).map(a => a.name)) {
+        if (!keep.includes(name)) { try { el.removeAttribute(name); } catch (_) {} }
+      }
+      if (tag === "img" && keepImages) {
+        const src = imageValue(el, "");
+        if (src) try { el.setAttribute("src", src); } catch (_) {}
+      }
+      if (JUNK_INLINE.test(text(el)) && text(el).length < 120 && tag !== "img") {
+        try { el.remove(); } catch (_) {}
+      }
     }
     return String(clone.innerHTML || "").replace(/\s{2,}/g, " ").trim();
   }
@@ -213,6 +294,8 @@
       }
     }
     for (const value of config.content_replaces || []) if (value) out = out.split(value).join("");
+    // strip leftover ad-like lines
+    out = out.split("\n").filter(line => !JUNK_INLINE.test(line) || line.length > 160).join("\n");
     return out.replace(/[ \t]+\n/g, "\n").replace(/\n[ \t]+/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
   }
 
@@ -253,7 +336,7 @@
 
   function labelRows(doc) {
     const rows = [];
-    const holders = queryAll(doc, ".info div, .info p, .info li, .book-info p, .book-info li, .detail p, .detail li, .story-info p, .story-info li, .truyen-info p, .truyen-info li, .meta li, .meta p, table tr, ul.list-info li, .book-information p, .item, .info-item, dl div");
+    const holders = queryAll(doc, ".info div, .info p, .info li, .book-info p, .book-info li, .detail p, .detail li, .story-info p, .story-info li, .truyen-info p, .truyen-info li, .meta li, .meta p, table tr, ul.list-info li, .book-information p, .item, .info-item, dl div, .novel-meta li, .novel-meta p, .content1 div.info, .justify-end");
     for (const el of holders) {
       const whole = text(el);
       if (!whole || whole.length > 400) continue;
@@ -289,44 +372,150 @@
   }
 
   /* ------------------------------------------------------------------ *
-   * Ảnh bìa / URL truyện
+   * Ảnh bìa / ảnh trong chương — bám pattern VBook + APK og:image
    * ------------------------------------------------------------------ */
+  function bestFromSrcset(srcset) {
+    if (!srcset) return "";
+    let best = "", bestW = -1;
+    for (const part of String(srcset).split(",")) {
+      const bits = part.trim().split(/\s+/);
+      if (!bits[0]) continue;
+      const wMatch = (bits[1] || "").match(/(\d+)w/i);
+      const w = wMatch ? parseInt(wMatch[1], 10) : 0;
+      if (w >= bestW) { bestW = w; best = bits[0]; }
+      if (!bits[1] && !best) best = bits[0];
+    }
+    return best;
+  }
+
+  function isBadCoverUrl(url) {
+    if (!url) return true;
+    if (/^data:/i.test(url)) return true;
+    if (BAD_COVER.test(url)) return true;
+    // tiny tracking pixels often end with =1 or /1.gif
+    if (/\/(1x1|pixel|blank)\b/i.test(url)) return true;
+    return false;
+  }
+
   function imageValue(el, baseUrl) {
     if (!el) return "";
-    if (el.tagName && el.tagName.toLowerCase() === "meta") return absolute(baseUrl, attr(el, "content"));
-    const srcset = attr(el, "srcset");
-    if (srcset) {
-      const first = srcset.split(",")[0].trim().split(/\s+/)[0];
-      if (first) return absolute(baseUrl, first);
+    const tag = el.tagName ? el.tagName.toLowerCase() : "";
+    if (tag === "meta") {
+      const c = absolute(baseUrl, attr(el, "content"));
+      return isBadCoverUrl(c) ? "" : c;
     }
-    for (const name of ["src", "data-src", "data-lazy-src", "data-original", "data-url", "data-cfsrc"]) {
-      const value = attr(el, name);
-      if (value && !/^data:/i.test(value)) return absolute(baseUrl, value);
+    // picture/source
+    if (tag === "source") {
+      const ss = bestFromSrcset(attr(el, "srcset") || attr(el, "data-srcset"));
+      const abs = absolute(baseUrl, ss || attr(el, "src"));
+      return isBadCoverUrl(abs) ? "" : abs;
     }
-    const style = attr(el, "style");
-    const bg = style && style.match(/url\((['"]?)(.*?)\1\)/);
-    if (bg) return absolute(baseUrl, bg[2]);
+    for (const name of IMAGE_ATTRS) {
+      let value = attr(el, name);
+      if (!value) continue;
+      if (name === "srcset" || name === "data-srcset") value = bestFromSrcset(value);
+      const abs = absolute(baseUrl, value);
+      if (abs && !isBadCoverUrl(abs)) return abs;
+    }
+    // style background-image
+    const style = attr(el, "style") || "";
+    const bg = style.match(/url\((['"]?)(.*?)\1\)/i);
+    if (bg) {
+      const abs = absolute(baseUrl, bg[2]);
+      if (abs && !isBadCoverUrl(abs)) return abs;
+    }
+    // parent data-image (truyenfull search cards)
+    const parent = el.parentElement;
+    if (parent) {
+      const di = attr(parent, "data-image") || attr(el, "data-image");
+      const abs = absolute(baseUrl, di);
+      if (abs && !isBadCoverUrl(abs)) return abs;
+    }
     return "";
   }
 
+  function scoreCoverUrl(url) {
+    if (!url) return -1e9;
+    let s = 0;
+    if (/cover|bia|thumb|poster|book/i.test(url)) s += 5;
+    if (/\.(webp|jpg|jpeg|png)(\?|$)/i.test(url)) s += 2;
+    if (/uploads|images|files|covers/i.test(url)) s += 2;
+    if (isBadCoverUrl(url)) s -= 50;
+    const dim = url.match(/(\d{2,4})x(\d{2,4})/);
+    if (dim) s += Math.min(10, (parseInt(dim[1], 10) * parseInt(dim[2], 10)) / 20000);
+    return s;
+  }
+
   function coverFromJsonLd(doc, baseUrl) {
+    const cands = [];
     for (const item of jsonLdNodes(doc)) {
       const image = item.image || item.thumbnailUrl;
-      const value = Array.isArray(image) ? image[0] : (image && typeof image === "object" ? image.url : image);
-      if (value) return absolute(baseUrl, value);
+      const list = Array.isArray(image) ? image : [image];
+      for (const img of list) {
+        const value = img && typeof img === "object" ? (img.url || img.contentUrl) : img;
+        const abs = absolute(baseUrl, value);
+        if (abs && !isBadCoverUrl(abs)) cands.push(abs);
+      }
     }
-    return "";
+    cands.sort((a, b) => scoreCoverUrl(b) - scoreCoverUrl(a));
+    return cands[0] || "";
   }
 
   function findCover(input, pageUrl) {
     const doc = asDocument(input);
-    const configured = config.cover ? fieldValue(doc, config.cover, pageUrl, sourceHtml(input, doc)) : "";
-    if (configured) return absolute(pageUrl, configured);
-    for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]', 'meta[itemprop="image"]', '.book-cover img', '.story-cover img', '.novel-cover img', '.book-info img', '.info-holder img', '.book-img img', '.books img', '.cover img', '.thumb img', 'img[itemprop="image"]', '.detail img']) {
-      const value = imageValue(one(doc, selector), pageUrl);
-      if (value) return value;
+    const raw = sourceHtml(input, doc);
+    const cands = [];
+
+    // 1) config.cover (VBook-style / site override)
+    if (config.cover) {
+      const configured = fieldValue(doc, config.cover, pageUrl, raw);
+      if (configured) cands.push(absolute(pageUrl, configured));
+      // multi-attr fallback on same selector
+      const el = one(doc, config.cover.selector, config.cover.element_indexed);
+      if (el) {
+        const v = imageValue(el, pageUrl);
+        if (v) cands.push(v);
+      }
     }
-    return coverFromJsonLd(doc, pageUrl);
+
+    // 2) known selectors (APK uses og:image; VBook uses div.book img, data-src, srcset...)
+    for (const selector of COVER_SELECTORS) {
+      for (const el of queryAll(doc, selector).slice(0, 4)) {
+        const v = imageValue(el, pageUrl);
+        if (v) cands.push(v);
+      }
+    }
+
+    // 3) any [data-image] on page (truyenfull lists)
+    for (const el of queryAll(doc, "[data-image]").slice(0, 5)) {
+      const v = absolute(pageUrl, attr(el, "data-image"));
+      if (v && !isBadCoverUrl(v)) cands.push(v);
+    }
+
+    // 4) JSON-LD
+    const ld = coverFromJsonLd(doc, pageUrl);
+    if (ld) cands.push(ld);
+
+    // 5) largest reasonable content image near book info
+    for (const el of queryAll(doc, ".book-information img, .book-info img, .info img, article img").slice(0, 8)) {
+      const v = imageValue(el, pageUrl);
+      if (v) cands.push(v);
+    }
+
+    const cleaned = unique(cands.filter(u => u && !isBadCoverUrl(u)));
+    cleaned.sort((a, b) => scoreCoverUrl(b) - scoreCoverUrl(a));
+    return cleaned[0] || "";
+  }
+
+  function extractContentImages(node, baseUrl) {
+    if (!node) return [];
+    const out = [];
+    for (const img of queryAll(node, "img")) {
+      const url = imageValue(img, baseUrl);
+      if (url && !isBadCoverUrl(url)) out.push({ url, alt: attr(img, "alt") || "" });
+    }
+    // vBook note: some chapters are image-only
+    return unique(out);
   }
 
   function findStoryUrl(input, pageUrl) {
@@ -351,7 +540,7 @@
 
   function guessTitle(doc) {
     const meta = metaContent(doc, ["og:title", "twitter:title"]);
-    if (meta) return meta.trim();
+    if (meta) return meta.replace(/\s*[|–-].*$/, "").trim();
     for (const selector of ["h1", "h2", ".chapter-title", ".chapter-name", ".chr-title"]) {
       const value = text(one(doc, selector));
       if (value) return value;
@@ -360,9 +549,9 @@
   }
 
   function guessStoryTitle(doc) {
-    const meta = metaContent(doc, ["og:novel:book_name", "books:title"]);
-    if (meta) return meta.trim();
-    for (const selector of [".story-title", ".truyen-title", ".book-title", ".novel-title", "h1.title", "h1", "h3.title"]) {
+    const meta = metaContent(doc, ["og:novel:book_name", "books:title", "og:title"]);
+    if (meta) return meta.replace(/\s*[|–-].*$/, "").trim();
+    for (const selector of [".story-title", ".truyen-title", ".book-title", ".novel-title", "h1.title", "h3.title", "h1"]) {
       const value = text(one(doc, selector));
       if (value) return value;
     }
@@ -371,9 +560,9 @@
   }
 
   /* ------------------------------------------------------------------ *
-   * Danh sách chương + phân trang
+   * Danh sách chương + phân trang (VBook toc.js / page.js)
    * ------------------------------------------------------------------ */
-  const CHAPTER_CONTAINERS = [".list-chapter", ".chapter-list", "#chapter-list", "#list-chapter", ".chapters", ".list-chapters", ".book-chapters", ".danh-sach-chuong", "#danh-sach-chuong", "#chapters", ".chapter_list", ".list-chapters-wrap", "ul.chapter", ".episode-list", "#tab-chapper"];
+  const CHAPTER_CONTAINERS = [".list-chapter", ".chapter-list", "#chapter-list", "#list-chapter", ".chapters", ".list-chapters", ".book-chapters", ".danh-sach-chuong", "#danh-sach-chuong", "#chapters", ".chapter_list", ".list-chapters-wrap", "ul.chapter", ".episode-list", "#tab-chapper", ".list-chap", ".volume-list", ".novel-detail"];
 
   function chapterNumber(name, url) {
     const fromName = String(name || "").match(/(?:chương|chapter|chap|quyển\s*\d+\s*chương|c)\s*[.\-_]?\s*(\d+(?:\.\d+)?)/i);
@@ -384,17 +573,21 @@
   }
 
   function chapterFlags(el) {
-    const marker = `${attr(el, "class")} ${el.innerHTML || ""}`.toLowerCase();
+    const marker = `${attr(el, "class")} ${el.innerHTML || ""} ${attr(el, "title")}`.toLowerCase();
+    const vipImg = !!(el.querySelector && el.querySelector("img[data-src*='vip'], img[src*='vip'], .vip, .lock"));
     return {
-      lock: /(lock|khóa|locked|fa-lock|premium)/.test(marker),
-      pay: /(vip|pay|coin|xu|mua chương|charge)/.test(marker)
+      lock: vipImg || /(lock|khóa|locked|fa-lock|premium)/.test(marker),
+      pay: vipImg || /(vip|pay|coin|xu|mua chương|charge)/.test(marker)
     };
   }
 
   function chapterLinks(input, pageUrl) {
     const doc = asDocument(input), out = [], seen = new Set();
     let links = [];
-    for (const selector of (config.toc && config.toc.selector ? [config.toc.selector] : []).concat(CHAPTER_CONTAINERS.map(s => `${s} a[href]`))) {
+    const selectors = [];
+    if (config.toc && config.toc.selector) selectors.push(config.toc.selector);
+    for (const s of CHAPTER_CONTAINERS) selectors.push(`${s} a[href]`);
+    for (const selector of selectors) {
       links = queryAll(doc, selector);
       if (links.length >= 3) break;
     }
@@ -402,7 +595,8 @@
     if (generic) links = queryAll(doc, "a[href]");
     for (const el of links) {
       const url = absolute(pageUrl, attr(el, "href"));
-      if (!url || (generic && !CHAPTER_PATTERN.test(url)) || seen.has(url)) continue;
+      if (!url || seen.has(url)) continue;
+      if (generic && !CHAPTER_PATTERN.test(url) && !CHAPTER_PATTERN.test(text(el))) continue;
       seen.add(url);
       const name = text(el) || attr(el, "title") || "Chương";
       const flags = chapterFlags(el);
@@ -410,6 +604,7 @@
         name,
         title: name,
         url,
+        link: url,
         index: out.length,
         number: chapterNumber(name, url),
         updatedAt: text(one(el.parentElement || el, ".time,.date,.chapter-time,time")) || "",
@@ -421,23 +616,41 @@
     return out;
   }
 
-  function hostOf(url) {
-    try { const u = new URL(url); return `${u.protocol}//${u.host}`; } catch (_) { return ""; }
-  }
-
   function tocPages(input, pageUrl) {
     const doc = asDocument(input), out = [], seen = new Set();
-    const pager = queryAll(doc, ".pagination a[href], .paging a[href], .page-nav a[href], ul.pager a[href], nav.pagination a[href], .pagination-container a[href]");
-    let max = 1;
+    // VBook page.js patterns
+    const totalInput = one(doc, "input#total-page, input[name=total-page], #total-page");
+    const totalFromInput = toNumber(attr(totalInput, "value") || text(totalInput));
+    const pager = queryAll(doc, ".pagination a[href], .paging a[href], .page-nav a[href], ul.pager a[href], nav.pagination a[href], .pagination-container a[href], li.nexts > a, .pagination li a");
+    let max = totalFromInput || 1;
     for (const el of pager) {
       const url = absolute(pageUrl, attr(el, "href"));
       if (!url || seen.has(url)) continue;
       seen.add(url);
-      const n = toNumber(text(el)) || toNumber((url.match(/(?:page|trang)[=\-\/](\d+)/i) || [])[1]);
+      const n = toNumber(text(el)) || toNumber((url.match(/(?:page|trang|p)[=\-\/](\d+)/i) || [])[1]);
       if (n && n > max) max = n;
       out.push({ page: n || out.length + 2, url });
     }
-    return { pages: out, totalPages: max };
+    // Build synthetic ajax TOC pages for truyenfull-like sites
+    const ajax = config.toc_ajax;
+    if (ajax) {
+      const tid = attr(one(doc, ajax.id_selector || "input#truyen-id"), "value");
+      const tascii = attr(one(doc, ajax.ascii_selector || "input#truyen-ascii"), "value");
+      const total = toNumber(attr(one(doc, ajax.total_page_selector || "input#total-page"), "value")) || max || 1;
+      if (tid && tascii) {
+        const pages = [];
+        for (let i = 1; i <= total; i++) {
+          const path = String(ajax.url_template || "/ajax.php?type=list_chapter&tid={tid}&tascii={tascii}&page={page}&totalp={total}")
+            .replace(/\{tid\}/g, encodeURIComponent(tid))
+            .replace(/\{tascii\}/g, encodeURIComponent(tascii))
+            .replace(/\{page\}/g, String(i))
+            .replace(/\{total\}/g, String(total));
+          pages.push({ page: i, url: absolute(pageUrl, path) });
+        }
+        return { pages, totalPages: total, mode: "ajax", listSelector: ajax.list_selector || ".list-chapter li a" };
+      }
+    }
+    return { pages: out, totalPages: max, mode: "html" };
   }
 
   function buildTocPageUrl(storyUrl, page) {
@@ -445,10 +658,57 @@
     try {
       const u = new URL(storyUrl);
       if (/[?&]page=\d+/.test(u.href)) return u.href.replace(/([?&]page=)\d+/, `$1${page}`);
+      if (/[?&]p=\d+/.test(u.href)) return u.href.replace(/([?&]p=)\d+/, `$1${page}`);
       if (/\/trang-\d+/.test(u.pathname)) return u.href.replace(/\/trang-\d+/, `/trang-${page}`);
+      if (/\/danh-sach-chuong/.test(u.pathname)) {
+        u.searchParams.set("p", String(page));
+        return u.href;
+      }
       u.searchParams.set("page", String(page));
       return u.href;
     } catch (_) { return storyUrl; }
+  }
+
+  function parseTocFromHtmlOrJson(input, pageUrl) {
+    // Support VBook toc.js that receives JSON { chap_list: "html" }
+    if (typeof input === "string") {
+      const trimmed = input.trim();
+      if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+        try {
+          const data = JSON.parse(trimmed);
+          if (data && typeof data.chap_list === "string") {
+            return chapterLinks(data.chap_list, pageUrl);
+          }
+          if (Array.isArray(data)) {
+            return data.map((c, i) => ({
+              name: c.name || c.title || `Chương ${i + 1}`,
+              title: c.name || c.title || `Chương ${i + 1}`,
+              url: absolute(pageUrl, c.url || c.link || c.slug || ""),
+              link: absolute(pageUrl, c.url || c.link || c.slug || ""),
+              index: i,
+              number: c.number != null ? c.number : chapterNumber(c.name || c.title, c.url || c.link),
+              lock: !!c.lock,
+              pay: !!c.pay,
+              host: hostOf(absolute(pageUrl, c.url || c.link || ""))
+            })).filter(c => c.url);
+          }
+          if (data && Array.isArray(data.chaps)) {
+            return data.chaps.map((e, i) => ({
+              name: e.title || e.name || `Chương ${i + 1}`,
+              title: e.title || e.name || `Chương ${i + 1}`,
+              url: absolute(pageUrl, e.url || e.link || ""),
+              link: absolute(pageUrl, e.url || e.link || ""),
+              index: i,
+              number: e.chidx != null ? e.chidx : chapterNumber(e.title, e.url),
+              lock: false,
+              pay: false,
+              host: hostOf(pageUrl)
+            }));
+          }
+        } catch (_) {}
+      }
+    }
+    return chapterLinks(input, pageUrl);
   }
 
   function firstChapter(input, pageUrl) {
@@ -467,7 +727,7 @@
   }
 
   /* ------------------------------------------------------------------ *
-   * parseStory — thông tin truyện đầy đủ (chuẩn vBook detail.js)
+   * parseStory — map 1-1 field VBook detail.js + metadata giàu
    * ------------------------------------------------------------------ */
   function parseStory(input, pageUrl) {
     const doc = asDocument(input);
@@ -476,11 +736,10 @@
     const rows = labelRows(doc);
     const ld = jsonLdNodes(doc).find(x => /Book|Novel|CreativeWork|Product|Series/i.test(String(x["@type"] || ""))) || {};
 
-    const name = fieldValue(doc, config.title, pageUrl, raw) ||
-      fieldValue(doc, detailCfg.name, pageUrl, raw) ||
+    const name = fieldValue(doc, detailCfg.name, pageUrl, raw) ||
+      fieldValue(doc, config.title, pageUrl, raw) ||
       ldName(ld.name) || guessStoryTitle(doc);
 
-    // Tác giả
     let author = fieldValue(doc, detailCfg.author, pageUrl, raw) ||
       firstText(doc, ['a[itemprop="author"]', '[itemprop="author"]', 'meta[property="og:novel:author"]', ".author a", ".author", ".tac-gia a", ".book-info a[href*=tac-gia]", 'a[href*="tac-gia"]', 'a[href*="author"]']) ||
       ldName(ld.author);
@@ -491,33 +750,46 @@
     if (authorLink) authorUrl = absolute(pageUrl, attr(authorLink, "href"));
     author = (author || "").replace(/^(tác giả|author)\s*[::]\s*/i, "").trim();
 
-    // Mô tả
-    const descEl = one(doc, (detailCfg.description && detailCfg.description.selector) || '[itemprop="description"], .desc-text, .description, .book-intro, .story-detail, .summary, .book-info-detail .book-intro, #gioi-thieu, .gioi-thieu, .detail-content');
-    const descriptionHtml = descEl ? sanitizeHtml(descEl) : "";
-    const description = descEl ? htmlToText(descEl) : (metaContent(doc, ["og:description", "description"]) || ldName(ld.description));
+    const descEl = one(doc, (detailCfg.description && detailCfg.description.selector) || '[itemprop="description"], .desc-text, .description, .book-intro, .story-detail, .summary, .book-info-detail .book-intro, #gioi-thieu, .gioi-thieu, .detail-content, #summary_markdown, section#id_novel_summary, .intro');
+    const descriptionHtml = descEl ? sanitizeHtml(descEl, false) : "";
+    let description = descEl ? htmlToText(descEl) : (metaContent(doc, ["og:description", "description"]) || ldName(ld.description));
 
-    // Thể loại / tag
+    // VBook `detail` field = HTML info block
+    const detailEl = one(doc, ".info, div.info, .book-info > p, .content1 div.info, .novel-meta, .detail-info, .book-information .book-info");
+    const detailHtml = detailEl ? sanitizeHtml(detailEl, false) : "";
+
     let genres = [];
     if (detailCfg.genres && detailCfg.genres.selector) {
-      genres = queryAll(doc, detailCfg.genres.selector).map(a => ({ title: text(a), url: absolute(pageUrl, attr(a, "href")) })).filter(g => g.title);
+      genres = queryAll(doc, detailCfg.genres.selector).map(a => ({
+        title: text(a),
+        url: absolute(pageUrl, attr(a, "href")),
+        input: absolute(pageUrl, attr(a, "href")),
+        link: absolute(pageUrl, attr(a, "href"))
+      })).filter(g => g.title);
     }
-    if (!genres.length) genres = linksIn(doc.body || doc, pageUrl).filter(g => /the-loai|theloai|genre|category|tag/i.test(g.url) && g.title.length < 40);
+    if (!genres.length) {
+      genres = queryAll(doc, 'a[itemprop="genre"], a[href*="the-loai"], a[href*="theloai"], a[href*="genre"], a[href*="category"]').map(a => ({
+        title: text(a),
+        url: absolute(pageUrl, attr(a, "href")),
+        input: absolute(pageUrl, attr(a, "href")),
+        link: absolute(pageUrl, attr(a, "href"))
+      })).filter(g => g.title && g.title.length < 40);
+    }
     const genreRow = rowFor(rows, LABELS.genres);
-    if (!genres.length && genreRow) genres = splitList(genreRow.value).map(t => ({ title: t, url: "" }));
+    if (!genres.length && genreRow) genres = splitList(genreRow.value).map(t => ({ title: t, url: "", input: "", link: "" }));
     genres = unique(genres).slice(0, 30);
 
     const tagRow = rowFor(rows, LABELS.tags);
-    const tags = unique((tagRow ? splitList(tagRow.value) : []).concat(queryAll(doc, ".tags a, .tag-list a").map(a => text(a)))).filter(Boolean).slice(0, 30);
+    const tags = unique((tagRow ? splitList(tagRow.value) : []).concat(queryAll(doc, ".tags a, .tag-list a, li.tags a").map(a => text(a)))).filter(Boolean).slice(0, 30);
 
-    // Trạng thái
     const statusRow = rowFor(rows, LABELS.status);
     const statusRaw = fieldValue(doc, detailCfg.status, pageUrl, raw) ||
       (statusRow ? statusRow.value : "") ||
       metaContent(doc, ["og:novel:status"]) ||
-      firstText(doc, [".status", ".text-success", ".label-status", ".book-state"]);
-    const status = normalizeStatus(statusRaw || raw.slice(0, 20000));
+      firstText(doc, [".status", ".text-success", ".label-status", ".book-state", "p.tag"]);
+    // VBook often checks raw HTML for ">Đang ra<"
+    const status = normalizeStatus(statusRaw || raw.slice(0, 30000));
 
-    // Số liệu
     const chapterRow = rowFor(rows, LABELS.chapters);
     const viewRow = rowFor(rows, LABELS.views);
     const ratingRow = rowFor(rows, LABELS.rating);
@@ -537,8 +809,24 @@
     const ratingCount = toNumber(text(one(doc, '[itemprop="ratingCount"], [itemprop="reviewCount"]')));
 
     const canonical = findStoryUrl(doc, pageUrl) || pageUrl;
+    const cover = findCover(doc, pageUrl);
 
-    const story = {
+    // VBook suggests blocks
+    let suggests = queryAll(doc, ".same-author a, .related a, .suggest a, .like-more-list a, .list-truyen a").slice(0, 20).map(a => ({
+      title: text(a),
+      name: text(a),
+      url: absolute(pageUrl, attr(a, "href")),
+      link: absolute(pageUrl, attr(a, "href")),
+      input: absolute(pageUrl, attr(a, "href"))
+    })).filter(x => x.title);
+    if (authorUrl) {
+      suggests = [{ title: "Cùng tác giả", name: "Cùng tác giả", url: authorUrl, link: authorUrl, input: authorUrl }].concat(suggests);
+    }
+    suggests = unique(suggests).slice(0, 20);
+
+    const ongoing = status.ongoing == null ? true : status.ongoing;
+
+    return {
       // định danh
       inputType: "story",
       sourceId: config.domain,
@@ -546,48 +834,50 @@
       url: pageUrl,
       storyUrl: canonical,
       canonicalUrl: canonical,
-      // thông tin chính
-      title: name,
+      link: canonical,
+      // VBook detail.js fields
       name: name,
-      altNames: unique(splitList(metaContent(doc, ["og:novel:alternate_name"]) || (rowFor(rows, ["tên khác", "tên gốc", "alt"]) || {}).value)),
+      title: name,
+      cover: cover,
+      coverUrl: cover,
       author: author,
       authorUrl: authorUrl,
+      description: descriptionHtml || description,
+      descriptionText: description,
+      descriptionHtml: descriptionHtml,
+      detail: detailHtml,
+      ongoing: ongoing,
+      genres: genres,
+      suggests: suggests,
+      // mở rộng
+      altNames: unique(splitList(metaContent(doc, ["og:novel:alternate_name"]) || (rowFor(rows, ["tên khác", "tên gốc", "alt"]) || {}).value)),
       artist: (rowFor(rows, LABELS.artist) || {}).value || "",
       translator: translatorRow ? translatorRow.value : "",
       originalSource: sourceRow ? sourceRow.value : "",
-      coverUrl: findCover(doc, pageUrl),
-      cover: findCover(doc, pageUrl),
-      description: description,
-      descriptionHtml: descriptionHtml,
-      genres: genres,
       tags: tags,
-      // trạng thái & số liệu
-      status: status.status,
+      status: status.status || (ongoing ? "ongoing" : "completed"),
       statusText: (statusRaw || "").trim(),
-      ongoing: status.ongoing == null ? true : status.ongoing,
-      completed: status.status === "completed",
+      completed: status.status === "completed" || ongoing === false,
       rating: rating == null ? null : rating,
       ratingCount: ratingCount,
       views: toNumber(viewRow ? viewRow.value : "") ?? toNumber(metaContent(doc, ["og:novel:read"])),
       wordCount: toNumber(wordRow ? wordRow.value : ""),
       updatedAt: (updatedRow ? updatedRow.value : "") || metaContent(doc, ["og:novel:update_time", "article:modified_time"]),
-      // chương
-      totalChapters: toNumber(chapterRow ? chapterRow.value : "") || chapters.length,
+      totalChapters: toNumber(chapterRow ? chapterRow.value : "") || chapters.length || paging.totalPages || null,
       chapterCount: chapters.length,
       firstChapterUrl: firstChapter(doc, pageUrl),
       latestChapter: latest ? { name: latest.name, url: latest.url, number: latest.number } : null,
       chapters: chapters,
       tocPages: paging.pages,
       tocTotalPages: paging.totalPages,
-      nextTocUrl: paging.totalPages > 1 ? buildTocPageUrl(canonical, 2) : "",
-      // gợi ý
-      suggests: unique(queryAll(doc, ".same-author a, .related a, .suggest a, .list-truyen a").slice(0, 20).map(a => ({ title: text(a), url: absolute(pageUrl, attr(a, "href")) })).filter(x => x.title)),
-      // cờ kỹ thuật cho app
+      tocMode: paging.mode || "html",
+      nextTocUrl: paging.totalPages > 1 ? (paging.pages[1] && paging.pages[1].url) || buildTocPageUrl(canonical, 2) : "",
       needWebview: !!config.use_webview,
       mayNeedVpn: !!config.may_need_vpn,
+      useHtmlParser: config.use_html_parser !== false,
+      logo: config.logo || "",
       engine: ENGINE
     };
-    return story;
   }
 
   /* ------------------------------------------------------------------ *
@@ -599,8 +889,8 @@
     const configured = fieldValue(doc, field, baseUrl, raw);
     if (configured) return absolute(baseUrl, configured);
     const selectors = type === "next"
-      ? ["a#next_chap", "a.next", "a[rel=next]", "a.next-chap", "a.btn-next", "a.chapter-next"]
-      : ["a#prev_chap", "a.prev", "a[rel=prev]", "a.prev-chap", "a.btn-prev", "a.chapter-prev"];
+      ? ["a#next_chap", "a.next", "a[rel=next]", "a.next-chap", "a.btn-next", "a.chapter-next", "#btnNextChapter", "#next-link"]
+      : ["a#prev_chap", "a.prev", "a[rel=prev]", "a.prev-chap", "a.btn-prev", "a.chapter-prev", "#btnPreChapter", "#prev-link"];
     for (const selector of selectors) {
       const el = one(doc, selector);
       const url = el && absolute(baseUrl, attr(el, "href"));
@@ -614,27 +904,35 @@
   function parseChapter(input, pageUrl) {
     const doc = asDocument(input), raw = sourceHtml(input, doc);
     const working = doc.cloneNode(true);
-    removeNodes(working, config.html_removes || []);
+    removeNodes(working, (config.html_removes || []).concat(["noscript", "script", "iframe", "ins", "div.ads-responsive"]));
     const storyTitle = fieldValue(working, config.title, pageUrl, raw) || guessStoryTitle(working);
     const chapterTitle = fieldValue(working, config.chapter, pageUrl, raw) || guessTitle(working);
 
-    let content = "", contentHtml = "";
+    let content = "", contentHtml = "", images = [];
     if (config.content && config.content.start) {
       const fragment = asDocument(slice(raw, config.content));
-      content = htmlToText(fragment.body || fragment);
-      contentHtml = sanitizeHtml(fragment.body || fragment);
+      const body = fragment.body || fragment;
+      content = htmlToText(body);
+      contentHtml = sanitizeHtml(body, true);
+      images = extractContentImages(body, pageUrl);
     } else {
       const node = config.content ? one(working, config.content.selector, config.content.element_indexed) : null;
       const target = node || bestContent(working);
       if (target) {
         removeNodes(target, ["h1", "h2", "h3", ".chapter-title", ".heading", ".ads-responsive"]);
+        images = extractContentImages(target, pageUrl);
         content = htmlToText(target);
-        contentHtml = sanitizeHtml(target);
+        contentHtml = sanitizeHtml(target, true);
       }
     }
     content = cleanContent(content);
     for (const heading of [chapterTitle, storyTitle]) {
       if (heading && content.toLowerCase().startsWith(heading.toLowerCase())) content = content.slice(heading.length).trim();
+    }
+    // Image-only chapter marker (VBook)
+    const imageOnly = (!content || content.length < 80) && images.length > 0;
+    if (imageOnly && !content) {
+      content = images.map((img, i) => `[Ảnh ${i + 1}] ${img.url}`).join("\n");
     }
     const words = content ? content.split(/\s+/).filter(Boolean).length : 0;
     return {
@@ -645,27 +943,30 @@
       chapterNumber: chapterNumber(chapterTitle, pageUrl),
       content,
       contentHtml,
+      images,
+      imageOnly,
       wordCount: words,
-      readingMinutes: words ? Math.max(1, Math.round(words / 200)) : 0,
+      readingMinutes: words ? Math.max(1, Math.round(words / 200)) : (imageOnly ? Math.max(1, images.length) : 0),
       coverUrl: findCover(working, pageUrl),
+      cover: findCover(working, pageUrl),
       storyUrl: findStoryUrl(working, pageUrl),
       chapterUrl: pageUrl,
       host: hostOf(pageUrl),
       nextUrl: findNavigation(working, pageUrl, "next"),
       previousUrl: findNavigation(working, pageUrl, "prev"),
-      empty: !content,
+      empty: !content && images.length === 0,
       engine: ENGINE
     };
   }
 
   function bestContent(doc) {
     const preferred = one(doc, COMMON_CONTENT);
-    if (preferred && text(preferred).length >= 100) return preferred;
+    if (preferred && (text(preferred).length >= 100 || queryAll(preferred, "img").length > 0)) return preferred;
     let best = null, score = 0;
     for (const el of queryAll(doc, "article,main,section,div")) {
       const marker = `${el.id || ""} ${el.className || ""}`;
       if (BAD_BLOCK.test(marker)) continue;
-      const size = text(el).length + queryAll(el, "p").length * 25;
+      const size = text(el).length + queryAll(el, "p").length * 25 + queryAll(el, "img").length * 40;
       if (size > score) { score = size; best = el; }
     }
     return best;
@@ -676,7 +977,10 @@
    * ------------------------------------------------------------------ */
   function inputType(input, pageUrl) {
     const doc = asDocument(input);
-    if (config.content && one(doc, config.content.selector, config.content.element_indexed)) return "chapter";
+    if (config.content && one(doc, config.content.selector, config.content.element_indexed)) {
+      const n = one(doc, config.content.selector, config.content.element_indexed);
+      if (n && (text(n).length > 80 || queryAll(n, "img").length)) return "chapter";
+    }
     if (CHAPTER_PATTERN.test(pageUrl || "")) return "chapter";
     return "story";
   }
@@ -704,18 +1008,31 @@
 
   function searchUrls(keyword) {
     const search = config.search || {}, encoded = encodeURIComponent(keyword || "");
+    const domain = String(config.domain || "").replace(/^https?:\/\//, "");
     const urls = [search.url].concat(search.urls || []).filter(Boolean);
     if (!urls.length) {
-      const base = "https://" + String(config.domain || "").replace(/^https?:\/\//, "");
-      return [`${base}/tim-kiem?tukhoa=${encoded}`, `${base}/?s=${encoded}`, `${base}/search?q=${encoded}`];
+      const base = "https://" + domain;
+      return [
+        `${base}/tim-kiem?tukhoa=${encoded}`,
+        `${base}/tim-kiem/?tukhoa=${encoded}`,
+        `${base}/tim-truyen/${encoded}`,
+        `${base}/ket-qua-tim-kiem?term=${encoded}`,
+        `${base}/?s=${encoded}`,
+        `${base}/search?q=${encoded}`
+      ];
     }
-    return unique(urls).map(url => url.replace(/%s/g, encoded).replace(/%d/g, String(keyword || "")));
+    return unique(urls).map(url => url
+      .replace(/\{domain\}/g, domain)
+      .replace(/%s/g, encoded)
+      .replace(/%d/g, String(keyword || "")));
   }
 
   function parseSearch(input, pageUrl) {
     const doc = asDocument(input), search = config.search || {}, out = [], seen = new Set();
     let items = search.item ? queryAll(doc, search.item.selector) : [];
-    if (!items.length) items = queryAll(doc, ".story-item,.book-item,.row-story,.list-truyen .row,article,.item,li");
+    if (!items.length) {
+      items = queryAll(doc, ".list-truyen div[itemscope], .list-truyen .row, .story-item, .book-item, .row-story, #rank-view-list ul li, .table-list tr, .books-list > li, book-list > a, article, .item");
+    }
     for (const item of items) {
       const raw = item.outerHTML || "";
       let url = fieldValue(item, search.link, pageUrl, raw);
@@ -723,24 +1040,44 @@
       if (!url || seen.has(url)) continue;
       if (search.exclude_url_regex) { try { if (new RegExp(search.exclude_url_regex, "i").test(url)) continue; } catch (_) {} }
       if (search.story_url_regex) { try { if (!new RegExp(search.story_url_regex, "i").test(url)) continue; } catch (_) {} }
-      const title = fieldValue(item, search.title, pageUrl, raw) || text(one(item, "h1,h2,h3,.title,a[href]"));
-      if (!title) continue;
+      const title = fieldValue(item, search.title, pageUrl, raw) || text(one(item, "h1,h2,h3,h4,.title,.truyen-title,.book-title,a[href]"));
+      if (!title || title.length < 2) continue;
       seen.add(url);
-      const latest = one(item, ".chapter-text, .text-info a, .latest-chapter, a[href*=chuong]");
+
+      // Cover: VBook uses data-image, data-src, src, srcset
+      let cover = fieldValue(item, search.cover, pageUrl, raw);
+      if (!cover) cover = absolute(pageUrl, attr(one(item, "[data-image]"), "data-image"));
+      if (!cover) cover = imageValue(one(item, "img, source, picture source"), pageUrl);
+      if (!cover) {
+        const m = raw.match(/(https?:\/\/[^\"'\s]+\.(?:jpg|jpeg|png|webp))/i);
+        if (m) cover = m[1];
+      }
+
+      const latest = one(item, ".chapter-text, .text-info a, .latest-chapter, a[href*=chuong], .chapters a");
       out.push({
         title,
         name: title,
         url,
         link: url,
-        author: fieldValue(item, search.author, pageUrl, raw) || text(one(item, ".author, [itemprop=author], a[href*=tac-gia]")),
-        cover: fieldValue(item, search.cover, pageUrl, raw) || imageValue(one(item, "img"), pageUrl),
-        description: text(one(item, ".desc, .description, .summary")).slice(0, 300),
+        author: fieldValue(item, search.author, pageUrl, raw) || text(one(item, ".author, [itemprop=author], a[href*=tac-gia], .book-author")),
+        cover: cover,
+        coverUrl: cover,
+        description: text(one(item, ".desc, .description, .summary, .info")).slice(0, 300),
         latestChapter: latest ? { name: text(latest), url: absolute(pageUrl, attr(latest, "href")) } : null,
-        tag: text(one(item, ".label, .status, .tag")),
+        tag: text(one(item, ".label, .status, .tag, .rate")),
         host: hostOf(url)
       });
     }
-    return out;
+
+    // next page (VBook search pagination)
+    let next = "";
+    const nextEl = one(doc, ".pagination > li.active + li a, .pagination li.active + li a, ul.pagination > li.active + li, li.next a, a[rel=next]");
+    if (nextEl) {
+      next = text(nextEl) || attr(nextEl, "href") || "";
+      const href = attr(nextEl, "href");
+      if (href) next = absolute(pageUrl, href);
+    }
+    return { items: out, next, host: hostOf(pageUrl), engine: ENGINE };
   }
 
   function prepare() {
@@ -759,7 +1096,7 @@
       if ((typeof doc.getElementById === "function" && doc.getElementById(marker)) || one(doc, `.${marker}`)) return true;
     }
     const node = config.content ? one(doc, config.content.selector, config.content.element_indexed) : bestContent(doc);
-    return !!node && text(node).length >= 50;
+    return !!node && (text(node).length >= 50 || queryAll(node, "img").length > 0);
   }
 
   /* ------------------------------------------------------------------ *
@@ -771,13 +1108,23 @@
     engine: ENGINE,
     config,
     domains: unique([config.domain].concat(config.keys || []).filter(Boolean)),
-    match(url) { try { const host = new URL(url).hostname.toLowerCase(); return this.domains.some(d => host.includes(String(d).toLowerCase())); } catch (_) { return false; } },
-    headers() { return Object.assign({ "user-agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36" }, (config.search && config.search.headers) || {}); },
+    match(url) {
+      try {
+        const host = new URL(url).hostname.toLowerCase();
+        return this.domains.some(d => host === String(d).toLowerCase() || host.endsWith("." + String(d).toLowerCase()) || host.includes(String(d).toLowerCase()));
+      } catch (_) { return false; }
+    },
+    headers() {
+      return Object.assign({
+        "user-agent": "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
+        "accept-language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7"
+      }, (config.search && config.search.headers) || {});
+    },
     searchUrls,
     parseSearch,
     parseStory,
     parseDetail: parseStory,
-    parseChapterList: chapterLinks,
+    parseChapterList: parseTocFromHtmlOrJson,
     parseTocPages: tocPages,
     buildTocPageUrl,
     getFirstChapterUrl: firstChapter,
@@ -796,7 +1143,7 @@
         parseSearch: () => parseSearch(payload.html, payload.url),
         parseStory: () => parseStory(payload.html, payload.url),
         parseDetail: () => parseStory(payload.html, payload.url),
-        parseChapterList: () => chapterLinks(payload.html, payload.url),
+        parseChapterList: () => parseTocFromHtmlOrJson(payload.html, payload.url),
         parseTocPages: () => tocPages(payload.html, payload.url),
         buildTocPageUrl: () => buildTocPageUrl(payload.url, payload.page),
         getFirstChapterUrl: () => firstChapter(payload.html, payload.url),

@@ -1,13 +1,16 @@
 {
   "id": "truyenflow.com",
   "name": "truyenflow.com",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "truyenflow.com",
     "www.truyenflow.com"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://truyenflow.com/favicon.ico",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenflow.com/truyenflow.com.js",
   "homepage_url": "https://truyenflow.com",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

@@ -1,0 +1,33 @@
+{
+  "id": "wikidichvn.com",
+  "name": "wikidichvn.com",
+  "version": 4,
+  "engine": 4,
+  "domains": [
+    "wikidichvn.com",
+    "www.wikidichvn.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?sz=128&domain=wikidichvn.com",
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wikidichvn.com/wikidichvn.com.js",
+  "homepage_url": "https://wikidichvn.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "cover_smart",
+    "navigation",
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
+}

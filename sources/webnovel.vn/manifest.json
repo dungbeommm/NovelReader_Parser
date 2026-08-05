@@ -1,13 +1,16 @@
 {
   "id": "webnovel.vn",
   "name": "webnovel.vn",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "webnovel.vn",
     "www.webnovel.vn"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://cdn.webnovel.vn/img/favicon.ico",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/webnovel.vn/webnovel.vn.js",
   "homepage_url": "https://webnovel.vn",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

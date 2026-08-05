@@ -1,12 +1,15 @@
 {
   "id": "eviehouse.wordpress.com",
   "name": "eviehouse.wordpress.com",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "eviehouse.wordpress.com"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?sz=128&domain=eviehouse.wordpress.com",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/eviehouse.wordpress.com/eviehouse.wordpress.com.js",
   "homepage_url": "https://eviehouse.wordpress.com",
   "capabilities": [
@@ -16,11 +19,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

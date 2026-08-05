@@ -1,15 +1,16 @@
 {
   "id": "truyenchu.net",
   "name": "truyenchu.net",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "truyenchu.net",
-    "truyenchu.com.vn",
-    "truyenchu.vn",
     "www.truyenchu.net"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://truyenchu.net/wp-content/uploads/2025/01/favicon-32x32-1.png",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenchu.net/truyenchu.net.js",
   "homepage_url": "https://truyenchu.net",
   "capabilities": [
@@ -19,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

@@ -1,13 +1,16 @@
 {
   "id": "dammy.cc",
   "name": "dammy.cc",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "dammy.cc",
     "www.dammy.cc"
   ],
   "use_webview": true,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?sz=128&domain=dammy.cc",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/dammy.cc/dammy.cc.js",
   "homepage_url": "https://dammy.cc",
   "capabilities": [
@@ -17,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

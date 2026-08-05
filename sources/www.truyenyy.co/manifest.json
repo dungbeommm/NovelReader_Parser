@@ -1,18 +1,18 @@
 {
   "id": "www.truyenyy.co",
   "name": "www.truyenyy.co",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "www.truyenyy.co",
     "truyenyy.co",
-    "truyenyy.com",
-    "truyenyy.vip",
-    "truyenyy.xyz"
+    "www.truyenyy.co"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://www.google.com/s2/favicons?domain=truyenyy.co&sz=128",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.truyenyy.co/www.truyenyy.co.js",
-  "homepage_url": "https://truyenyy.co",
+  "homepage_url": "https://www.truyenyy.co",
   "capabilities": [
     "resolve_input",
     "story",
@@ -20,11 +20,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

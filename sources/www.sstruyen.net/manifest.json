@@ -1,16 +1,17 @@
 {
   "id": "www.sstruyen.net",
   "name": "www.sstruyen.net",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "www.sstruyen.net",
-    "sstruyen.com",
-    "sstruyen.vn"
+    "www.sstruyen.net"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv30x4ZZLE9K-JhHGkoYPBiyGtOMhz2aGJIw&s",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/www.sstruyen.net/www.sstruyen.net.js",
-  "homepage_url": "https://sstruyen.net",
+  "homepage_url": "https://www.sstruyen.net",
   "capabilities": [
     "resolve_input",
     "story",
@@ -18,11 +19,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

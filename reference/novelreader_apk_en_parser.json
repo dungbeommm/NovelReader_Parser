@@ -1,0 +1,152 @@
+[
+  {
+    "logo": "https://static.wattpad.com/img/logos/wp-logo-orange.png",
+    "domain": "wattpad.com",
+    "may_need_vpn": true,
+    "keys": [
+      "wattpad.com"
+    ],
+    "enable_download": false,
+    "use_html_parser": true,
+    "title": {
+      "selector": "h2"
+    },
+    "chapter": {
+      "selector": "h1"
+    },
+    "content": {
+      "use_proxy": "https://novel-reader-1063262486780.asia-southeast1.run.app/redirect?origin=",
+      "selector": "p",
+      "interceptor": "wattpad"
+    },
+    "next_button": {
+      "selector": "#story-part-navigation a",
+      "value": "href"
+    },
+    "pre_button": {
+      "selector": "#story-part-navigation a",
+      "value": "href"
+    },
+    "chapter_ignore_domain": true
+  },
+  {
+    "domain": "noveltoon.mobi",
+    "keys": [
+      "noveltoon"
+    ],
+    "use_html_parser": true,
+    "title": {
+      "selector": ".watch-main-title"
+    },
+    "chapter": {
+      "selector": ".watch-chapter-title"
+    },
+    "content": {
+      "selector": ".watch-chapter-detail"
+    },
+    "next_button": {
+      "selector": ".bottom-bar a",
+      "value": "href",
+      "element_indexed": 1
+    },
+    "pre_button": {
+      "selector": ".bottom-bar a",
+      "value": "href"
+    },
+    "chapter_ignore_domain": true,
+    "enable_download": false
+  },
+  {
+    "logo": "https://cdn.webnovel.vn/img/favicon.ico",
+    "domain": "webnovel.com",
+    "keys": [
+      "webnovel"
+    ],
+    "use_html_parser": true,
+    "use_webview": false,
+    "title": {
+      "selector": "h1.reader__title a",
+      "value": "text"
+    },
+    "chapter": {
+      "selector": "p.reader__chapter",
+      "value": "text"
+    },
+    "content": {
+      "selector": "#chapter-c"
+    },
+    "next_button": {
+      "selector": "a[rel=\"next\"]",
+      "value": "href",
+      "element_indexed": 0
+    },
+    "pre_button": {
+      "selector": "a[rel=\"prev\"]",
+      "value": "href",
+      "element_indexed": 0
+    },
+    "detail_first_chapter_js": "(function(){var p=window.location.pathname;if(!p.endsWith('/'))p+='/';return window.location.origin+p+'chuong-1/';})()"
+  },
+  {
+    "domain": "inkitt.com",
+    "keys": [
+      "inkitt"
+    ],
+    "use_html_parser": true,
+    "use_webview": true,
+    "title": {
+      "selector": "h2"
+    },
+    "chapter": {
+      "selector": "h2"
+    },
+    "content": {
+      "selector": ".inkitt-content"
+    },
+    "next_button": {
+      "selector": ".next-chapter-button",
+      "value": "href"
+    },
+    "pre_button": {
+      "selector": ".next-chapter-button",
+      "value": "href"
+    },
+    "content_load_js": "(function(){try{if(document.getElementById('inkitt-ready'))return;function ready(){if(!document.getElementById('inkitt-ready')){var r=document.createElement('div');r.id='inkitt-ready';r.style.display='none';document.body.appendChild(r);}}function putText(cls,txt){if(!txt||document.querySelector('.'+cls))return;var e=document.createElement('span');e.className=cls;e.style.display='none';e.textContent=txt.trim();document.body.appendChild(e);}function putLink(cls,href){if(!href||document.querySelector('a.'+cls))return;var a=document.createElement('a');a.className=cls;a.href=href;a.style.display='none';document.body.appendChild(a);}function normalize(href){try{var u=new URL(href,location.origin);return u.origin+u.pathname.replace(/\\/+$/,'');}catch(e){return href;}}function cleanText(text){return (text||'').replace(/\\u00a0/g,' ').replace(/\\s+/g,' ').trim();}var bookTitle=cleanText((document.querySelector('h1')||{}).textContent||'');var chapterTitle=cleanText((document.querySelector('h2')||{}).textContent||'');putText('inkitt-book-title',bookTitle);putText('inkitt-chapter-title',chapterTitle);var heading=document.querySelector('h2');if(heading&&!document.querySelector('.inkitt-content')){var out=document.createElement('div');out.className='inkitt-content';out.style.display='none';var node=heading.nextElementSibling;while(node){var text=cleanText(node.textContent||'');if(/^chapters$/i.test(text)||/^continue reading$/i.test(text)||/^let\\s+.+\\s+know what you thought about this chapter!?$/i.test(text))break;if(!text||text==='0'){node=node.nextElementSibling;continue;}var clone=node.cloneNode(true);clone.querySelectorAll('script,style,button,svg,form').forEach(function(e){e.remove();});var cloneText=cleanText(clone.textContent||'');if(cloneText&&cloneText!=='0'){out.appendChild(clone);}node=node.nextElementSibling;}if(!out.children.length){var frag=[];node=heading.nextElementSibling;while(node){var text=cleanText(node.textContent||'');if(/^chapters$/i.test(text)||/^continue reading$/i.test(text)||/^let\\s+.+\\s+know what you thought about this chapter!?$/i.test(text))break;if(text&&text!=='0')frag.push('<p>'+text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</p>');node=node.nextElementSibling;}out.innerHTML=frag.join('');}document.body.appendChild(out);}var next='';[].slice.call(document.querySelectorAll('a[href]')).some(function(a){var text=cleanText(a.textContent||'');var href=normalize(a.getAttribute('href')||a.href||'');if(/next chapter/i.test(text)&&/\\/stories\\/\\d+\\/chapters\\/\\d+$/i.test(href)){next=href;return true;}return false;});if(!next){var current=normalize(location.href);var links=[].slice.call(document.querySelectorAll('a[href*=\"/stories/\"][href*=\"/chapters/\"]')).map(function(a){return {href:normalize(a.getAttribute('href')||a.href||''),text:cleanText(a.textContent||'')};}).filter(function(x){return /\\/stories\\/\\d+\\/chapters\\/\\d+$/i.test(x.href);});var idx=links.findIndex(function(x){return x.href===current;});if(idx>=0&&idx<links.length-1)next=links[idx+1].href;}putLink('inkitt-next',next);ready();}catch(e){try{var r=document.createElement('div');r.id='inkitt-ready';r.style.display='none';document.body.appendChild(r);}catch(_){}}})()",
+    "data_loading_checker": [
+      "inkitt-ready"
+    ]
+  },
+  {
+    "logo": "https://www.wuxiaworld.com/favicon-32x32.png",
+    "domain": "wuxiaworld.com",
+    "keys": [
+      "wuxiaworld.com",
+      "www.wuxiaworld.com"
+    ],
+    "use_html_parser": true,
+    "title": {
+      "selector": "a[href^=\"/novel/\"] p"
+    },
+    "chapter": {
+      "start": "<title data-rh=\"true\">",
+      "middle": " - ",
+      "end": "</title>"
+    },
+    "content": {
+      "selector": ".fr-view"
+    },
+    "next_button": {
+      "selector": "section a:has(button:contains(NEXT CHAPTER))",
+      "value": "href"
+    },
+    "pre_button": {
+      "selector": "section a:contains(PREVIOUS CHAPTER)",
+      "value": "href"
+    },
+    "detail_first_chapter": {
+      "selector": "a:contains(START READING)",
+      "value": "href"
+    },
+    "chapter_ignore_domain": false
+  }
+]

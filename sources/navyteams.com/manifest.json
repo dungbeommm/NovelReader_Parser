@@ -1,15 +1,18 @@
 {
   "id": "navyteams.com",
   "name": "navyteams.com",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
-    "navyteams.com",
     "navyteam",
-    "navyteamz",
-    "navyteams"
+    "navyteams",
+    "navyteams.com",
+    "navyteamz"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://navyteamz.com/storage/site/UTXsBXH3MCbGasHyEXINMrWKSqzTCkRL865M2PMl.png",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/navyteams.com/navyteams.com.js",
   "homepage_url": "https://navyteams.com",
   "capabilities": [
@@ -19,11 +22,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

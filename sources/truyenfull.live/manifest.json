@@ -1,17 +1,18 @@
 {
   "id": "truyenfull.live",
   "name": "truyenfull.live",
-  "version": 3,
+  "version": 4,
+  "engine": 4,
   "domains": [
     "truyenfull.live",
-    "truyenfull.io",
     "truyenfull.today",
-    "truyenfull.tv",
     "truyenfull.vision",
     "truyenfull.vn"
   ],
   "use_webview": false,
   "may_need_vpn": false,
+  "use_html_parser": true,
+  "logo": "https://static.truyenfull.today/favicons/favicon-192x192.png",
   "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/truyenfull.live/truyenfull.live.js",
   "homepage_url": "https://truyenfull.live",
   "capabilities": [
@@ -21,11 +22,14 @@
     "chapter_list",
     "random_chapter",
     "cover",
+    "cover_smart",
     "navigation",
     "search",
     "story_metadata",
     "chapter_pagination",
-    "rich_search"
-  ],
-  "engine": 3
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
 }

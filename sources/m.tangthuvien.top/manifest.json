@@ -1,0 +1,32 @@
+{
+  "id": "m.tangthuvien.top",
+  "name": "m.tangthuvien.top",
+  "version": 4,
+  "engine": 4,
+  "domains": [
+    "m.tangthuvien.top"
+  ],
+  "use_webview": true,
+  "may_need_vpn": true,
+  "use_html_parser": true,
+  "logo": "https://play-lh.googleusercontent.com/ySl8uNRjXrdZoY4xJZWZ0A875z4lTVLvJckaE3ECsL8OitY0g5UES9QMpNhO7OO1hH4=w480-h960-rw",
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/m.tangthuvien.top/m.tangthuvien.top.js",
+  "homepage_url": "https://m.tangthuvien.top",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "cover_smart",
+    "navigation",
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
+}

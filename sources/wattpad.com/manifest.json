@@ -1,0 +1,32 @@
+{
+  "id": "wattpad.com",
+  "name": "wattpad.com",
+  "version": 4,
+  "engine": 4,
+  "domains": [
+    "wattpad.com"
+  ],
+  "use_webview": false,
+  "may_need_vpn": true,
+  "use_html_parser": true,
+  "logo": "https://static.wattpad.com/img/logos/wp-logo-orange.png",
+  "script_url": "https://raw.githubusercontent.com/dungbeommm/NovelReader_Parser/main/sources/wattpad.com/wattpad.com.js",
+  "homepage_url": "https://wattpad.com",
+  "capabilities": [
+    "resolve_input",
+    "story",
+    "chapter",
+    "chapter_list",
+    "random_chapter",
+    "cover",
+    "cover_smart",
+    "navigation",
+    "search",
+    "story_metadata",
+    "chapter_pagination",
+    "chapter_images",
+    "rich_search",
+    "toc_ajax",
+    "vbook_detail_compat"
+  ]
+}
